@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Startseite - ZBN Civil Engineers | Sachverständigenbüro</title>
+  <meta name="description" content="Industriebau leicht gemacht - Beratung, Gutachten, Lösung. ZBN Civil Engineers GmbH steht Ihnen mit langjähriger Erfahrung zur Verfügung.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ═══════════════════════════════════════════════════════
+       CSS VARIABLES - Theme System (from schaeden_1.html)
+       ═══════════════════════════════════════════════════════ */
+    :root {
+      /* Primary Colors */
+      --color-primary-50: oklch(0.97 0.01 240);
+      --color-primary-100: oklch(0.93 0.02 240);
+      --color-primary-200: oklch(0.85 0.04 240);
+      --color-primary-300: oklch(0.75 0.06 240);
+      --color-primary-400: oklch(0.62 0.12 240);
+      --color-primary-500: oklch(0.52 0.15 240);
+      --color-primary-600: oklch(0.45 0.14 240);
+      --color-primary-700: oklch(0.38 0.12 240);
+      --color-primary-800: oklch(0.30 0.09 240);
+      --color-primary-900: oklch(0.23 0.06 240);
+
+      /* Accent Colors */
+      --color-accent-400: oklch(0.75 0.15 45);
+      --color-accent-500: oklch(0.68 0.18 45);
+      --color-accent-600: oklch(0.60 0.16 45);
+
+      /* Neutral Colors */
+      --color-gray-50: oklch(0.98 0 0);
+      --color-gray-100: oklch(0.95 0 0);
+      --color-gray-200: oklch(0.88 0 0);
+      --color-gray-300: oklch(0.78 0 0);
+      --color-gray-400: oklch(0.62 0 0);
+      --color-gray-500: oklch(0.50 0 0);
+      --color-gray-600: oklch(0.42 0 0);
+      --color-gray-700: oklch(0.35 0 0);
+      --color-gray-800: oklch(0.25 0 0);
+      --color-gray-900: oklch(0.15 0 0);
+
+      /* Semantic Colors */
+      --color-success: oklch(0.65 0.18 145);
+      --color-danger: oklch(0.60 0.22 25);
+      --color-warning: oklch(0.75 0.15 80);
+      --color-info: oklch(0.55 0.15 200);
+
+      /* Background & Surface */
+      --color-bg-page: var(--color-gray-50);
+      --color-bg-surface: oklch(1 0 0);
+      --color-bg-surface-hover: var(--color-gray-100);
+      --color-bg-muted: var(--color-gray-100);
+
+      /* Text Colors */
+      --color-text-primary: var(--color-gray-900);
+      --color-text-secondary: var(--color-gray-600);
+      --color-text-muted: var(--color-gray-500);
+      --color-text-inverse: oklch(1 0 0);
+
+      /* Border Colors */
+      --color-border-light: var(--color-gray-200);
+      --color-border-medium: var(--color-gray-300);
+      --color-border-dark: var(--color-gray-400);
+
+      /* Typography */
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      /* Spacing */
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+
+      /* Border Radius */
+      --radius-md: 0.625rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+
+      /* Shadows */
+      --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+      /* Animations */
+      --duration-fast: 150ms;
+      --duration-base: 250ms;
+      --duration-slow: 350ms;
+      --duration-slower: 500ms;
+      --ease-out: cubic-bezier(0, 0, 0.2, 1);
+      --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans) !important;
+      background-color: var(--color-bg-page) !important;
+      color: var(--color-text-primary) !important;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Navigation */
+    .nav-link {
+      position: relative;
+      transition: color var(--duration-fast) var(--ease-out);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--color-primary-500);
+      transition: width var(--duration-base) var(--ease-out);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Dropdown Navigation */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-toggle {
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: white;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all var(--duration-base) var(--ease-out);
+      z-index: 50;
+      margin-top: 0.5rem;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: all var(--duration-fast) var(--ease-out);
+      font-weight: 500;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: var(--color-gray-50);
+      color: var(--color-primary-600);
+      padding-left: 1.25rem;
+    }
+
+    .dropdown-menu a:first-child {
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .dropdown-menu a:last-child {
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+
+    .dropdown-icon {
+      transition: transform var(--duration-fast) var(--ease-out);
+      display: inline-block;
+      margin-left: 0.25rem;
+      font-size: 0.75rem;
+    }
+
+    .dropdown:hover .dropdown-icon {
+      transform: rotate(180deg);
+    }
+
+    /* Mobile Dropdown */
+    .mobile-dropdown {
+      overflow: hidden;
+    }
+
+    .mobile-dropdown-toggle {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: none;
+      border: none;
+      padding: 0.5rem 0;
+      font: inherit;
+      color: var(--color-text-secondary);
+      font-weight: 500;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .mobile-dropdown-toggle:hover {
+      color: var(--color-text-primary);
+    }
+
+    .mobile-dropdown-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--duration-base) var(--ease-out);
+      padding-left: 1rem;
+      border-left: 2px solid var(--color-gray-200);
+      margin-left: 0.5rem;
+    }
+
+    .mobile-dropdown-menu.open {
+      max-height: 500px;
+    }
+
+    .mobile-dropdown-menu a {
+      display: block;
+      padding: 0.5rem 0;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-size: 0.9375rem;
+    }
+
+    .mobile-dropdown-menu a:hover {
+      color: var(--color-primary-600);
+    }
+
+    .mobile-dropdown-icon {
+      transition: transform var(--duration-fast) var(--ease-out);
+      font-size: 0.75rem;
+    }
+
+    .mobile-dropdown-icon.open {
+      transform: rotate(180deg);
+    }
+
+    /* Buttons */
+    .btn {
+      transition: all var(--duration-fast) var(--ease-out) !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: var(--shadow-lg) !important;
+    }
+
+    .btn:active {
+      transform: translateY(0) !important;
+    }
+
+    /* Cards */
+    .service-card {
+      transition: all var(--duration-base) var(--ease-out) !important;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: var(--shadow-xl) !important;
+      border-color: var(--color-primary-300) !important;
+    }
+
+    .card-icon {
+      transition: transform var(--duration-base) var(--ease-out) !important;
+    }
+
+    .service-card:hover .card-icon {
+      transform: scale(1.1) !important;
+    }
+
+    /* Hero Animation */
+    @keyframes hero-fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-title {
+      animation: hero-fade-in var(--duration-slower) var(--ease-out);
+    }
+
+    .hero-subtitle {
+      animation: hero-fade-in var(--duration-slower) var(--ease-out) 150ms;
+    }
+
+    .hero-cta {
+      animation: hero-fade-in var(--duration-slower) var(--ease-out) 300ms;
+    }
+
+    /* Scroll Animations */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity var(--duration-slower) var(--ease-out),
+                  transform var(--duration-slower) var(--ease-out);
+    }
+
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger-item:nth-child(1) { transition-delay: 0ms; }
+    .stagger-item:nth-child(2) { transition-delay: 100ms; }
+    .stagger-item:nth-child(3) { transition-delay: 200ms; }
+
+    /* Hero Background Image */
+    .hero-background {
+      background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-bg-surface) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-background::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://bbf1mix.myrdbx.io/wp-content/uploads/2022/08/Bild-2-scaled-e1660897177127.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.05;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="index_1.html" class="text-2xl font-bold" style="color: var(--color-primary-600);">
+            ZBN
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8">
+          <a href="index_1.html" class="nav-link text-gray-900 font-medium">Home</a>
+
+          <!-- Leistungen Dropdown -->
+          <div class="dropdown">
+            <button class="dropdown-toggle nav-link text-gray-700 hover:text-gray-900 font-medium flex items-center">
+              Leistungen
+              <i class="dropdown-icon fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+              <a href="gutachten_1.html">Planung</a>
+              <a href="schaeden_1.html">Begutachtung</a>
+              <a href="problemloesung_1.html">Beratung</a>
+              <a href="leichtbau_1.html">Leichtbau</a>
+            </div>
+          </div>
+
+          <!-- Wissen Dropdown -->
+          <div class="dropdown">
+            <button class="dropdown-toggle nav-link text-gray-700 hover:text-gray-900 font-medium flex items-center">
+              Wissen
+              <i class="dropdown-icon fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+              <a href="fachbeitrage_1.html">Fachbeiträge</a>
+              <a href="seminare_1.html">Seminare</a>
+            </div>
+          </div>
+
+          <!-- Unternehmen Dropdown -->
+          <div class="dropdown">
+            <button class="dropdown-toggle nav-link text-gray-700 hover:text-gray-900 font-medium flex items-center">
+              Unternehmen
+              <i class="dropdown-icon fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+              <a href="wir_1.html">Über uns</a>
+              <a href="karriere_1.html">Karriere</a>
+            </div>
+          </div>
+
+          <a href="kontakt_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Kontakt</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-white border-t border-gray-200 shadow-lg max-h-[calc(100vh-4rem)] overflow-y-auto">
+      <div class="px-4 py-4 space-y-3">
+        <a href="index_1.html" class="block py-2 text-gray-900 font-medium">Home</a>
+
+        <!-- Leistungen Mobile Dropdown -->
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-toggle" data-dropdown="leistungen">
+            <span>Leistungen</span>
+            <i class="mobile-dropdown-icon fas fa-chevron-down"></i>
+          </button>
+          <div class="mobile-dropdown-menu" data-dropdown-menu="leistungen">
+            <a href="gutachten_1.html">Planung</a>
+            <a href="schaeden_1.html">Begutachtung</a>
+            <a href="problemloesung_1.html">Beratung</a>
+            <a href="leichtbau_1.html">Leichtbau</a>
+          </div>
+        </div>
+
+        <!-- Wissen Mobile Dropdown -->
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-toggle" data-dropdown="wissen">
+            <span>Wissen</span>
+            <i class="mobile-dropdown-icon fas fa-chevron-down"></i>
+          </button>
+          <div class="mobile-dropdown-menu" data-dropdown-menu="wissen">
+            <a href="fachbeitrage_1.html">Fachbeiträge</a>
+            <a href="seminare_1.html">Seminare</a>
+          </div>
+        </div>
+
+        <!-- Unternehmen Mobile Dropdown -->
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-toggle" data-dropdown="unternehmen">
+            <span>Unternehmen</span>
+            <i class="mobile-dropdown-icon fas fa-chevron-down"></i>
+          </button>
+          <div class="mobile-dropdown-menu" data-dropdown-menu="unternehmen">
+            <a href="wir_1.html">Über uns</a>
+            <a href="karriere_1.html">Karriere</a>
+          </div>
+        </div>
+
+        <a href="kontakt_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero-background pt-32 pb-20 px-4 min-h-screen flex items-center">
+    <div class="hero-content max-w-6xl mx-auto text-center">
+      <div class="mb-6">
+        <i class="fas fa-building text-6xl hero-title" style="color: var(--color-primary-500);"></i>
+      </div>
+      <h1 class="hero-title text-5xl md:text-6xl lg:text-7xl font-bold mb-6" style="color: var(--color-text-primary);">
+        Industriebau leicht gemacht
+      </h1>
+      <p class="hero-subtitle text-2xl md:text-3xl mb-12" style="color: var(--color-text-secondary);">
+        Beratung, Gutachten, Lösung
+      </p>
+      <div class="hero-cta">
+        <a href="kontakt_1.html" class="btn inline-block px-10 py-5 text-xl font-semibold rounded-lg text-white" style="background-color: var(--color-primary-600);">
+          Kontakt aufnehmen
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WELCOME SECTION -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-4xl mx-auto text-center fade-in-up">
+      <h2 class="text-4xl font-bold mb-6" style="color: var(--color-text-primary);">
+        Willkommen bei ZBN
+      </h2>
+      <p class="text-xl mb-6" style="color: var(--color-text-secondary);">
+        Wir freuen uns, dass Sie zu uns gefunden haben!
+      </p>
+      <p class="text-lg leading-relaxed" style="color: var(--color-text-secondary);">
+        Wir, ZBN Civil Engineers GmbH, stehen Ihnen unkompliziert und kompetent mit langjähriger Erfahrung in folgenden Bereichen zur Verfügung:
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN SERVICES -->
+  <section class="py-20 px-4" style="background-color: var(--color-bg-page);">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Service 1: Planung -->
+        <a href="gutachten_1.html" class="service-card stagger-item fade-in-up block bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md" style="text-decoration: none;">
+          <div class="h-64 bg-gradient-to-br from-blue-100 to-indigo-100 relative" style="background-image: url('https://bbf1mix.myrdbx.io/wp-content/uploads/2022/08/Bild-2-scaled-e1660897177127.jpg'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+              <i class="card-icon fas fa-drafting-compass text-6xl text-white"></i>
+            </div>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-4" style="color: var(--color-text-primary);">Planung</h3>
+            <p class="text-base mb-6" style="color: var(--color-text-secondary);">
+              Verlegeplanung für Dächer, Wandplanung für Hallen, statische Berechnungen und mehr
+            </p>
+            <span class="inline-flex items-center text-base font-semibold" style="color: var(--color-primary-600);">
+              Mehr erfahren <i class="fas fa-arrow-right ml-2"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- Service 2: Begutachtung -->
+        <a href="schaeden_1.html" class="service-card stagger-item fade-in-up block bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md" style="text-decoration: none;">
+          <div class="h-64 bg-gradient-to-br from-orange-100 to-red-100 relative flex items-center justify-center">
+            <i class="card-icon fas fa-search text-6xl" style="color: var(--color-accent-500);"></i>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-4" style="color: var(--color-text-primary);">Begutachtung</h3>
+            <p class="text-base mb-6" style="color: var(--color-text-secondary);">
+              Professionelle Begutachtung von Schäden an Gebäudehüllen, Gutachtenerstellung und Ursachenforschung
+            </p>
+            <span class="inline-flex items-center text-base font-semibold" style="color: var(--color-primary-600);">
+              Mehr erfahren <i class="fas fa-arrow-right ml-2"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- Service 3: Beratung -->
+        <a href="problemloesung_1.html" class="service-card stagger-item fade-in-up block bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md" style="text-decoration: none;">
+          <div class="h-64 bg-gradient-to-br from-green-100 to-teal-100 relative flex items-center justify-center">
+            <i class="card-icon fas fa-lightbulb text-6xl" style="color: var(--color-success);"></i>
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-4" style="color: var(--color-text-primary);">Beratung</h3>
+            <p class="text-base mb-6" style="color: var(--color-text-secondary);">
+              Technische Beratung, Problemlösung, Seminare und Weiterbildung für Ihre Projekte
+            </p>
+            <span class="inline-flex items-center text-base font-semibold" style="color: var(--color-primary-600);">
+              Mehr erfahren <i class="fas fa-arrow-right ml-2"></i>
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-4xl mx-auto text-center fade-in-up">
+      <h2 class="text-3xl font-bold mb-6" style="color: var(--color-text-primary);">
+        Haben Sie Fragen?
+      </h2>
+      <p class="text-xl mb-8" style="color: var(--color-text-secondary);">
+        Sollten Sie unsicher sein, ob wir Ihnen bei Ihrem Anliegen weiterhelfen können – zögern Sie nicht und rufen Sie uns an!
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="kontakt_1.html" class="btn inline-block px-8 py-4 text-lg font-semibold rounded-lg text-white" style="background-color: var(--color-primary-600);">
+          <i class="fas fa-envelope mr-2"></i> Kontaktformular
+        </a>
+        <a href="tel:+49254193270" class="btn inline-block px-8 py-4 text-lg font-semibold rounded-lg border-2" style="color: var(--color-primary-600); border-color: var(--color-primary-600);">
+          <i class="fas fa-phone mr-2"></i> Anrufen
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER LOGOS -->
+  <section class="py-16 px-4" style="background-color: var(--color-bg-page);">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-2xl font-semibold text-center mb-12" style="color: var(--color-text-primary);">
+        Mitglied bei
+      </h3>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center opacity-60">
+        <img src="https://bbf1mix.myrdbx.io/wp-content/uploads/2021/05/Bild-48.png" alt="FLIB" class="max-h-16 w-auto grayscale hover:grayscale-0 transition-all">
+        <img src="https://bbf1mix.myrdbx.io/wp-content/uploads/2021/05/Bild-47.png" alt="PPA Europe" class="max-h-16 w-auto grayscale hover:grayscale-0 transition-all">
+        <img src="https://bbf1mix.myrdbx.io/wp-content/uploads/2021/05/Bild-49.png" alt="IFBS" class="max-h-16 w-auto grayscale hover:grayscale-0 transition-all">
+        <img src="https://bbf1mix.myrdbx.io/wp-content/uploads/2021/05/Bild-50.png" alt="IHK" class="max-h-16 w-auto grayscale hover:grayscale-0 transition-all">
+        <img src="https://bbf1mix.myrdbx.io/wp-content/uploads/2021/05/Screenshot-2022-06-09-104046.png" alt="TU Dortmund" class="max-h-16 w-auto grayscale hover:grayscale-0 transition-all">
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 px-4 bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <!-- Column 1: About -->
+        <div>
+          <h3 class="text-xl font-bold mb-4" style="color: var(--color-primary-600);">ZBN</h3>
+          <p class="text-sm" style="color: var(--color-text-secondary);">
+            Civil Engineers GmbH<br>
+            Sachverständigenbüro für Gebäudehüllen
+          </p>
+        </div>
+
+        <!-- Column 2: Services -->
+        <div>
+          <h4 class="font-semibold mb-4" style="color: var(--color-text-primary);">Leistungen</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="gutachten_1.html" class="text-gray-600 hover:text-gray-900">Planung</a></li>
+            <li><a href="schaeden_1.html" class="text-gray-600 hover:text-gray-900">Begutachtung</a></li>
+            <li><a href="problemloesung_1.html" class="text-gray-600 hover:text-gray-900">Beratung</a></li>
+            <li><a href="leichtbau_1.html" class="text-gray-600 hover:text-gray-900">Unser Fachgebiet</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company -->
+        <div>
+          <h4 class="font-semibold mb-4" style="color: var(--color-text-primary);">Unternehmen</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="wir_1.html" class="text-gray-600 hover:text-gray-900">Über uns</a></li>
+            <li><a href="karriere_1.html" class="text-gray-600 hover:text-gray-900">Karriere</a></li>
+            <li><a href="fachbeitrage_1.html" class="text-gray-600 hover:text-gray-900">Fachbeiträge</a></li>
+            <li><a href="kontakt_1.html" class="text-gray-600 hover:text-gray-900">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Legal -->
+        <div>
+          <h4 class="font-semibold mb-4" style="color: var(--color-text-primary);">Rechtliches</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="impressum_1.html" class="text-gray-600 hover:text-gray-900">Impressum</a></li>
+            <li><a href="datenschutz_1.html" class="text-gray-600 hover:text-gray-900">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="pt-8 border-t border-gray-200 text-center">
+        <p class="text-sm" style="color: var(--color-text-muted);">
+          © 2025 ZBN Civil Engineers GmbH. Alle Rechte vorbehalten.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Mobile Dropdown Toggle
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+    mobileDropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const dropdownId = toggle.getAttribute('data-dropdown');
+        const dropdownMenu = document.querySelector(`[data-dropdown-menu="${dropdownId}"]`);
+        const dropdownIcon = toggle.querySelector('.mobile-dropdown-icon');
+
+        // Toggle the dropdown
+        dropdownMenu.classList.toggle('open');
+        dropdownIcon.classList.toggle('open');
+      });
+    });
+
+    // Scroll Animation Observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const offsetTop = targetElement.offsetTop - 80;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+# Node modules
+node_modules/
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Build outputs
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Development folders
+.superdesign/
+.claude/
+checklists/
+
+# Project files
+CLAUDE.md
+SETUP.md
+QA_REPORT_TEMPLATE.md
+project-settings.json
+desktop.ini
+*.txt

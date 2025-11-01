@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schäden & Begutachtung | ZBN Sachverständigenbüro</title>
+  <meta name="description" content="Professionelle Begutachtung von Gebäudehüllen - Von der Ursachenforschung bis zur Schadensbehebung. Fassaden, Dächer, Korrosion, Undichtigkeiten.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    /* ═══════════════════════════════════════════════════════
+       CSS VARIABLES - Theme System
+       ═══════════════════════════════════════════════════════ */
+    :root {
+      /* Primary Colors - Professional Blue */
+      --color-primary-50: oklch(0.97 0.01 240);
+      --color-primary-100: oklch(0.93 0.02 240);
+      --color-primary-200: oklch(0.85 0.04 240);
+      --color-primary-300: oklch(0.75 0.06 240);
+      --color-primary-400: oklch(0.62 0.12 240);
+      --color-primary-500: oklch(0.52 0.15 240);
+      --color-primary-600: oklch(0.45 0.14 240);
+      --color-primary-700: oklch(0.38 0.12 240);
+      --color-primary-800: oklch(0.30 0.09 240);
+      --color-primary-900: oklch(0.23 0.06 240);
+
+      /* Accent Colors - Warning/Alert Orange */
+      --color-accent-400: oklch(0.75 0.15 45);
+      --color-accent-500: oklch(0.68 0.18 45);
+      --color-accent-600: oklch(0.60 0.16 45);
+
+      /* Neutral Colors */
+      --color-gray-50: oklch(0.98 0 0);
+      --color-gray-100: oklch(0.95 0 0);
+      --color-gray-200: oklch(0.88 0 0);
+      --color-gray-300: oklch(0.78 0 0);
+      --color-gray-400: oklch(0.62 0 0);
+      --color-gray-500: oklch(0.50 0 0);
+      --color-gray-600: oklch(0.42 0 0);
+      --color-gray-700: oklch(0.35 0 0);
+      --color-gray-800: oklch(0.25 0 0);
+      --color-gray-900: oklch(0.15 0 0);
+
+      /* Semantic Colors */
+      --color-success: oklch(0.65 0.18 145);
+      --color-danger: oklch(0.60 0.22 25);
+      --color-warning: oklch(0.75 0.15 80);
+      --color-info: oklch(0.55 0.15 200);
+
+      /* Background & Surface */
+      --color-bg-page: var(--color-gray-50);
+      --color-bg-surface: oklch(1 0 0);
+      --color-bg-surface-hover: var(--color-gray-100);
+      --color-bg-muted: var(--color-gray-100);
+
+      /* Text Colors */
+      --color-text-primary: var(--color-gray-900);
+      --color-text-secondary: var(--color-gray-600);
+      --color-text-muted: var(--color-gray-500);
+      --color-text-inverse: oklch(1 0 0);
+
+      /* Border Colors */
+      --color-border-light: var(--color-gray-200);
+      --color-border-medium: var(--color-gray-300);
+      --color-border-dark: var(--color-gray-400);
+
+      /* Typography */
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+      /* Font Sizes */
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.25rem;
+      --text-2xl: 1.5rem;
+      --text-3xl: 1.875rem;
+      --text-4xl: 2.25rem;
+      --text-5xl: 3rem;
+      --text-6xl: 3.75rem;
+
+      /* Font Weights */
+      --font-light: 300;
+      --font-normal: 400;
+      --font-medium: 500;
+      --font-semibold: 600;
+      --font-bold: 700;
+      --font-extrabold: 800;
+
+      /* Spacing */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+
+      /* Border Radius */
+      --radius-sm: 0.25rem;
+      --radius-default: 0.5rem;
+      --radius-md: 0.625rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-2xl: 1.5rem;
+      --radius-full: 9999px;
+
+      /* Shadows */
+      --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+      /* Focus Ring */
+      --focus-ring: 0 0 0 3px var(--color-primary-200);
+
+      /* Animations */
+      --duration-fast: 150ms;
+      --duration-base: 250ms;
+      --duration-slow: 350ms;
+      --duration-slower: 500ms;
+
+      --ease-linear: linear;
+      --ease-in: cubic-bezier(0.4, 0, 1, 1);
+      --ease-out: cubic-bezier(0, 0, 0.2, 1);
+      --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+      --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       BASE STYLES
+       ═══════════════════════════════════════════════════════ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans) !important;
+      background-color: var(--color-bg-page) !important;
+      color: var(--color-text-primary) !important;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       NAVIGATION ANIMATIONS
+       ═══════════════════════════════════════════════════════ */
+    .nav-link {
+      position: relative;
+      transition: color var(--duration-fast) var(--ease-out);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--color-primary-500);
+      transition: width var(--duration-base) var(--ease-out);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-mobile-menu {
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: transform var(--duration-slow) var(--ease-out),
+                  opacity var(--duration-slow) var(--ease-out);
+    }
+
+    .nav-mobile-menu.open {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       BUTTON ANIMATIONS
+       ═══════════════════════════════════════════════════════ */
+    .btn {
+      transition: all var(--duration-fast) var(--ease-out) !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: var(--shadow-lg) !important;
+    }
+
+    .btn:active {
+      transform: translateY(0) !important;
+      box-shadow: var(--shadow-md) !important;
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       CARD ANIMATIONS
+       ═══════════════════════════════════════════════════════ */
+    .damage-card {
+      transition: all var(--duration-base) var(--ease-out) !important;
+    }
+
+    .damage-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: var(--shadow-xl) !important;
+      border-color: var(--color-primary-300) !important;
+    }
+
+    .process-card {
+      transition: all var(--duration-base) var(--ease-out) !important;
+    }
+
+    .process-card:hover {
+      transform: scale(1.05) !important;
+      box-shadow: var(--shadow-lg) !important;
+    }
+
+    .card-icon {
+      transition: transform var(--duration-base) var(--ease-bounce) !important;
+    }
+
+    .damage-card:hover .card-icon,
+    .process-card:hover .card-icon {
+      transform: scale(1.15) rotate(5deg) !important;
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       SCROLL ANIMATIONS
+       ═══════════════════════════════════════════════════════ */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity var(--duration-slower) var(--ease-out),
+                  transform var(--duration-slower) var(--ease-out);
+    }
+
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger-item:nth-child(1) { transition-delay: 0ms; }
+    .stagger-item:nth-child(2) { transition-delay: 100ms; }
+    .stagger-item:nth-child(3) { transition-delay: 200ms; }
+    .stagger-item:nth-child(4) { transition-delay: 300ms; }
+    .stagger-item:nth-child(5) { transition-delay: 400ms; }
+
+    /* ═══════════════════════════════════════════════════════
+       ACCORDION ANIMATIONS
+       ═══════════════════════════════════════════════════════ */
+    .accordion-header {
+      transition: background-color var(--duration-fast) var(--ease-out) !important;
+    }
+
+    .accordion-header:hover {
+      background-color: var(--color-bg-surface-hover) !important;
+    }
+
+    .accordion-icon {
+      transition: transform var(--duration-base) var(--ease-out) !important;
+    }
+
+    .accordion-header.expanded .accordion-icon {
+      transform: rotate(180deg) !important;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--duration-slow) var(--ease-in-out);
+    }
+
+    .accordion-content.expanded {
+      max-height: 1000px;
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       FORM ANIMATIONS
+       ═══════════════════════════════════════════════════════ */
+    .form-input {
+      transition: all var(--duration-fast) var(--ease-out) !important;
+    }
+
+    .form-input:focus {
+      border-color: var(--color-primary-500) !important;
+      box-shadow: var(--focus-ring) !important;
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       HERO ANIMATIONS
+       ═══════════════════════════════════════════════════════ */
+    @keyframes hero-fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-title {
+      animation: hero-fade-in var(--duration-slower) var(--ease-out);
+    }
+
+    .hero-subtitle {
+      animation: hero-fade-in var(--duration-slower) var(--ease-out) 150ms;
+    }
+
+    .hero-cta {
+      animation: hero-fade-in var(--duration-slower) var(--ease-out) 300ms;
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       IMAGE HOVER
+       ═══════════════════════════════════════════════════════ */
+    .damage-image {
+      overflow: hidden;
+    }
+
+    .damage-card:hover .damage-image img {
+      transform: scale(1.1);
+      transition: transform var(--duration-slow) var(--ease-out);
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       REDUCED MOTION
+       ═══════════════════════════════════════════════════════ */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Dropdown Navigation */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-toggle {
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: white;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all var(--duration-base) var(--ease-out);
+      z-index: 50;
+      margin-top: 0.5rem;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: all var(--duration-fast) var(--ease-out);
+      font-weight: 500;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: var(--color-gray-50);
+      color: var(--color-primary-600);
+      padding-left: 1.25rem;
+    }
+
+    .dropdown-menu a:first-child {
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .dropdown-menu a:last-child {
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+
+    .dropdown-icon {
+      transition: transform var(--duration-fast) var(--ease-out);
+      display: inline-block;
+      margin-left: 0.25rem;
+      font-size: 0.75rem;
+    }
+
+    .dropdown:hover .dropdown-icon {
+      transform: rotate(180deg);
+    }
+
+    /* Mobile Dropdown */
+    .mobile-dropdown {
+      overflow: hidden;
+    }
+
+    .mobile-dropdown-toggle {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: none;
+      border: none;
+      padding: 0.5rem 0;
+      font: inherit;
+      color: var(--color-text-secondary);
+      font-weight: 500;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .mobile-dropdown-toggle:hover {
+      color: var(--color-text-primary);
+    }
+
+    .mobile-dropdown-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--duration-base) var(--ease-out);
+      padding-left: 1rem;
+      border-left: 2px solid var(--color-gray-200);
+      margin-left: 0.5rem;
+    }
+
+    .mobile-dropdown-menu.open {
+      max-height: 500px;
+    }
+
+    .mobile-dropdown-menu a {
+      display: block;
+      padding: 0.5rem 0;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-size: 0.9375rem;
+    }
+
+    .mobile-dropdown-menu a:hover {
+      color: var(--color-primary-600);
+    }
+
+    .mobile-dropdown-icon {
+      transition: transform var(--duration-fast) var(--ease-out);
+      font-size: 0.75rem;
+    }
+
+    .mobile-dropdown-icon.open {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════════════ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="index_1.html" class="text-2xl font-bold" style="color: var(--color-primary-600);">
+            ZBN
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8">
+          <a href="index_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Home</a>
+
+          <!-- Leistungen Dropdown -->
+          <div class="dropdown">
+            <button class="dropdown-toggle nav-link text-gray-900 font-medium flex items-center">
+              Leistungen
+              <i class="dropdown-icon fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+              <a href="gutachten_1.html">Planung</a>
+              <a href="schaeden_1.html">Begutachtung</a>
+              <a href="problemloesung_1.html">Beratung</a>
+              <a href="leichtbau_1.html">Leichtbau</a>
+            </div>
+          </div>
+
+          <!-- Wissen Dropdown -->
+          <div class="dropdown">
+            <button class="dropdown-toggle nav-link text-gray-700 hover:text-gray-900 font-medium flex items-center">
+              Wissen
+              <i class="dropdown-icon fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+              <a href="fachbeitrage_1.html">Fachbeiträge</a>
+              <a href="seminare_1.html">Seminare</a>
+            </div>
+          </div>
+
+          <!-- Unternehmen Dropdown -->
+          <div class="dropdown">
+            <button class="dropdown-toggle nav-link text-gray-700 hover:text-gray-900 font-medium flex items-center">
+              Unternehmen
+              <i class="dropdown-icon fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+              <a href="wir_1.html">Über uns</a>
+              <a href="karriere_1.html">Karriere</a>
+            </div>
+          </div>
+
+          <a href="kontakt_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Kontakt</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-white border-t border-gray-200 shadow-lg max-h-[calc(100vh-4rem)] overflow-y-auto">
+      <div class="px-4 py-4 space-y-3">
+        <a href="index_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Home</a>
+
+        <!-- Leistungen Mobile Dropdown -->
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-toggle" data-dropdown="leistungen">
+            <span>Leistungen</span>
+            <i class="mobile-dropdown-icon fas fa-chevron-down"></i>
+          </button>
+          <div class="mobile-dropdown-menu" data-dropdown-menu="leistungen">
+            <a href="gutachten_1.html">Planung</a>
+            <a href="schaeden_1.html">Begutachtung</a>
+            <a href="problemloesung_1.html">Beratung</a>
+            <a href="leichtbau_1.html">Leichtbau</a>
+          </div>
+        </div>
+
+        <!-- Wissen Mobile Dropdown -->
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-toggle" data-dropdown="wissen">
+            <span>Wissen</span>
+            <i class="mobile-dropdown-icon fas fa-chevron-down"></i>
+          </button>
+          <div class="mobile-dropdown-menu" data-dropdown-menu="wissen">
+            <a href="fachbeitrage_1.html">Fachbeiträge</a>
+            <a href="seminare_1.html">Seminare</a>
+          </div>
+        </div>
+
+        <!-- Unternehmen Mobile Dropdown -->
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-toggle" data-dropdown="unternehmen">
+            <span>Unternehmen</span>
+            <i class="mobile-dropdown-icon fas fa-chevron-down"></i>
+          </button>
+          <div class="mobile-dropdown-menu" data-dropdown-menu="unternehmen">
+            <a href="wir_1.html">Über uns</a>
+            <a href="karriere_1.html">Karriere</a>
+          </div>
+        </div>
+
+        <a href="kontakt_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HERO SECTION
+       ═══════════════════════════════════════════════════════ -->
+  <section class="pt-32 pb-20 px-4" style="background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-bg-surface) 100%);">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="mb-6">
+        <i class="fas fa-helmet-safety text-6xl hero-title" style="color: var(--color-primary-500);"></i>
+      </div>
+      <h1 class="hero-title text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style="color: var(--color-text-primary);">
+        Begutachtung & Schadenanalyse
+      </h1>
+      <p class="hero-subtitle text-xl md:text-2xl mb-8" style="color: var(--color-text-secondary);">
+        Professionelle Begutachtung von Gebäudehüllen – Von der Ursachenforschung bis zur Schadensbehebung
+      </p>
+      <div class="hero-cta">
+        <a href="#kontakt" class="btn inline-block px-8 py-4 text-lg font-semibold rounded-lg text-white" style="background-color: var(--color-primary-600);">
+          Jetzt Kontakt aufnehmen
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       VORGEHENSWEISE SECTION
+       ═══════════════════════════════════════════════════════ -->
+  <section id="begutachtung" class="py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 fade-in-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--color-text-primary);">
+          Unser Begutachtungsprozess
+        </h2>
+        <p class="text-lg" style="color: var(--color-text-secondary);">
+          Nicht bei jeder Begutachtung ist zwingend ein schriftliches Gutachten das Endergebnis
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Step 1: Einreichung -->
+        <div class="process-card bg-white rounded-xl p-6 border border-gray-200 shadow-md fade-in-up stagger-item">
+          <div class="card-icon w-16 h-16 rounded-full flex items-center justify-center mb-4" style="background-color: var(--color-primary-100);">
+            <i class="fas fa-upload text-2xl" style="color: var(--color-primary-600);"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Einreichung</h3>
+          <p class="text-sm" style="color: var(--color-text-secondary);">
+            Sie können uns Bildmaterial, Zeichnungen und andere Unterlagen einreichen, sodass wir uns ein Bild von der Situation machen können.
+          </p>
+        </div>
+
+        <!-- Step 2: Ortstermin -->
+        <div class="process-card bg-white rounded-xl p-6 border border-gray-200 shadow-md fade-in-up stagger-item">
+          <div class="card-icon w-16 h-16 rounded-full flex items-center justify-center mb-4" style="background-color: var(--color-primary-100);">
+            <i class="fas fa-map-marker-alt text-2xl" style="color: var(--color-primary-600);"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Ortstermin</h3>
+          <p class="text-sm" style="color: var(--color-text-secondary);">
+            In den meisten Fällen ist eine fachgerechte Bewertung nur vor Ort möglich. Bei einem Ortstermin können wir eine Ersteinschätzung abgeben.
+          </p>
+        </div>
+
+        <!-- Step 3: Gutachten -->
+        <div class="process-card bg-white rounded-xl p-6 border border-gray-200 shadow-md fade-in-up stagger-item">
+          <div class="card-icon w-16 h-16 rounded-full flex items-center justify-center mb-4" style="background-color: var(--color-primary-100);">
+            <i class="fas fa-file-alt text-2xl" style="color: var(--color-primary-600);"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Gutachten</h3>
+          <p class="text-sm" style="color: var(--color-text-secondary);">
+            Das Verfassen eines schriftlichen Berichtes und die Erstellung eines Gutachtens auf Ihre Bedürfnisse zugeschnitten.
+          </p>
+        </div>
+
+        <!-- Step 4: Sanierungskonzept -->
+        <div class="process-card bg-white rounded-xl p-6 border border-gray-200 shadow-md fade-in-up stagger-item">
+          <div class="card-icon w-16 h-16 rounded-full flex items-center justify-center mb-4" style="background-color: var(--color-primary-100);">
+            <i class="fas fa-wrench text-2xl" style="color: var(--color-primary-600);"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Sanierungskonzept</h3>
+          <p class="text-sm" style="color: var(--color-text-secondary);">
+            Das Aufstellen eines Sanierungskonzeptes und statische Berechnung – all das können wir Ihnen anbieten.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center fade-in-up">
+        <p class="text-lg" style="color: var(--color-text-secondary);">
+          Selbstverständlich informieren wir Sie im Vorhinein über anfallende Kosten.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       TYPISCHE SCHÄDEN OVERVIEW
+       ═══════════════════════════════════════════════════════ -->
+  <section id="schaeden" class="py-20 px-4" style="background-color: var(--color-bg-page);">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 fade-in-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--color-text-primary);">
+          Typische Schäden
+        </h2>
+        <p class="text-xl mb-2" style="color: var(--color-text-secondary);">
+          Probleme mit Schäden?
+        </p>
+        <p class="text-2xl font-semibold" style="color: var(--color-primary-600);">
+          Kontaktieren Sie uns und wir finden eine Lösung
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Damage 1: Optische Mängel -->
+        <div class="damage-card bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md fade-in-up stagger-item">
+          <div class="damage-image h-48 relative overflow-hidden">
+            <img src="https://bbf1mix.myrdbx.io/wp-content/uploads/2021/09/61027c_0b000dc077764f9d8c6a64b46837dec7.webp"
+                 alt="Optische Mängel und Beulen"
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+              <i class="card-icon fas fa-exclamation-triangle text-6xl text-white" style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Optische Mängel und Beulen</h3>
+            <p class="text-sm mb-4" style="color: var(--color-text-secondary);">
+              Beulen an der Fassade durch fehlerhafte Wandelemente. Verlust des Haftzugverbunds zwischen Kernmaterial und Deckblechen.
+            </p>
+            <a href="#details-beulen" class="text-sm font-semibold" style="color: var(--color-primary-600);">
+              Mehr erfahren <i class="fas fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Damage 2: Verschraubung -->
+        <div class="damage-card bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md fade-in-up stagger-item">
+          <div class="damage-image h-48 relative overflow-hidden">
+            <img src="https://bbf1mix.myrdbx.io/wp-content/uploads/2021/09/61027c_4160d49ebda6470c98befdd9c5012a37-1.webp"
+                 alt="Falsche Verschraubung"
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-center justify-center">
+              <i class="card-icon fas fa-screwdriver text-6xl text-white" style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Falsche Verschraubung</h3>
+            <p class="text-sm mb-4" style="color: var(--color-text-secondary);">
+              Falsche Verschraubung kann zu großen Folgeschäden führen. Dichtungen können beschädigt werden und Korrosion entstehen.
+            </p>
+            <a href="#details-verschraubung" class="text-sm font-semibold" style="color: var(--color-primary-600);">
+              Mehr erfahren <i class="fas fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Damage 3: Korrosion -->
+        <div class="damage-card bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md fade-in-up stagger-item">
+          <div class="damage-image h-48 relative overflow-hidden">
+            <img src="https://bbf1mix.myrdbx.io/wp-content/uploads/2021/09/61027c_549f29c3c02b4c2b84d9bf2929220687.webp"
+                 alt="Korrosion und Rost"
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-center justify-center">
+              <i class="card-icon fas fa-shield-virus text-6xl text-white" style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Korrosion und Rost</h3>
+            <p class="text-sm mb-4" style="color: var(--color-text-secondary);">
+              Rost an Dachelementen ist eine häufig auftretende Folge nicht fachgerecht ausgeführter Installation.
+            </p>
+            <a href="#details-korrosion" class="text-sm font-semibold" style="color: var(--color-primary-600);">
+              Mehr erfahren <i class="fas fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Damage 4: Feuchte Dämmung -->
+        <div class="damage-card bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md fade-in-up stagger-item">
+          <div class="damage-image h-48 relative overflow-hidden">
+            <img src="https://bbf1mix.myrdbx.io/wp-content/uploads/2021/09/61027c_6a19caaf91544651b151b462e3f0ce2a.webp"
+                 alt="Feuchte Dämmung"
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-center justify-center">
+              <i class="card-icon fas fa-tint text-6xl text-white" style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Feuchte Dämmung</h3>
+            <p class="text-sm mb-4" style="color: var(--color-text-secondary);">
+              Feuchtigkeit und Wasser an der Fassade führen langfristig fast immer zu größeren Folgeschäden.
+            </p>
+            <a href="#details-daemmung" class="text-sm font-semibold" style="color: var(--color-primary-600);">
+              Mehr erfahren <i class="fas fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Damage 5: Undichtigkeit -->
+        <div class="damage-card bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md fade-in-up stagger-item">
+          <div class="damage-image h-48 relative overflow-hidden">
+            <img src="https://bbf1mix.myrdbx.io/wp-content/uploads/2021/09/61027c_710ce10d13904ab79cb7290ace3111a8.webp"
+                 alt="Undichtigkeit und Luftzug"
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-center justify-center">
+              <i class="card-icon fas fa-wind text-6xl text-white" style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Undichtigkeit Luftzug</h3>
+            <p class="text-sm mb-4" style="color: var(--color-text-secondary);">
+              Luftzug oder Kälte am Fenster deutet auf Undichtigkeiten hin. Mangelhafte Isolation sorgt für höhere Heizkosten.
+            </p>
+            <a href="#details-undichtigkeit" class="text-sm font-semibold" style="color: var(--color-primary-600);">
+              Mehr erfahren <i class="fas fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       DETAILLIERTE SCHADENSANALYSE (Accordion)
+       ═══════════════════════════════════════════════════════ -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 fade-in-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--color-text-primary);">
+          Wobei wir Ihnen helfen
+        </h2>
+        <p class="text-lg" style="color: var(--color-text-secondary);">
+          Für jedes Problem gibt es auch eine Lösung – aber nur dann, wenn die Ursache klar identifiziert wurde
+        </p>
+      </div>
+
+      <!-- Accordion Items -->
+      <div class="space-y-4">
+        <!-- Item 1: Beulen -->
+        <div id="details-beulen" class="border border-gray-200 rounded-lg overflow-hidden fade-in-up">
+          <button class="accordion-header w-full px-6 py-4 flex justify-between items-center bg-white hover:bg-gray-50" onclick="toggleAccordion(this)">
+            <div class="flex items-center">
+              <i class="fas fa-exclamation-triangle text-2xl mr-4" style="color: var(--color-accent-500);"></i>
+              <h3 class="text-xl font-semibold text-left" style="color: var(--color-text-primary);">Optische Mängel und Beulen</h3>
+            </div>
+            <i class="accordion-icon fas fa-chevron-down text-gray-500"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 pb-6" style="color: var(--color-text-secondary);">
+              <p class="leading-relaxed">
+                Beulen an der Fassade durch fehlerhafte Wandelemente. Der Verlust des Haftzugverbunds zwischen Kernmaterial und Deckblechen lässt sich auch vom unkundigen Beobachter unschwer anhand der Blasen diagnostizieren. Gemeint sind suppentellerartige Beulen, die aus der Wandebene herausragen. Diese entstehen oft deutlich nach der Montage, oft erst nachdem die Wandelemente für einige Zeit der Sonne ausgesetzt waren.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Verschraubung -->
+        <div id="details-verschraubung" class="border border-gray-200 rounded-lg overflow-hidden fade-in-up">
+          <button class="accordion-header w-full px-6 py-4 flex justify-between items-center bg-white hover:bg-gray-50" onclick="toggleAccordion(this)">
+            <div class="flex items-center">
+              <i class="fas fa-screwdriver text-2xl mr-4" style="color: var(--color-primary-500);"></i>
+              <h3 class="text-xl font-semibold text-left" style="color: var(--color-text-primary);">Mangelhafte Verschraubung</h3>
+            </div>
+            <i class="accordion-icon fas fa-chevron-down text-gray-500"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 pb-6" style="color: var(--color-text-secondary);">
+              <p class="leading-relaxed mb-4">
+                Falsche Verschraubung kann zu großen Folgeschäden führen. Falsche Verschraubung kann die Dichtung beschädigen und zu Korrosion und Dellenbildung führen.
+              </p>
+              <p class="leading-relaxed">
+                Korrekt eingebaute Dichtschrauben haben neben ihrer Bedeutung für die Standsicherheit der Gebäudehülle auch die Funktion der regensicheren Abdichtung des Bohrloches. Dazu ist das vollflächige und gleichmäßige Aufliegen der Dichtscheibe notwendig. Zu fest eingebrachte Verbinder erzeugen Verformungen der dünnwandigen Bleche in denen häufig und lange Wasser stehen bleiben wird. Die damit einhergehende Beanspruchung, insbesondere bei Eisbildung, wird zum vorzeitigen Altern und nachfolgender mangelhafter Dichtwirkung führen.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Korrosion -->
+        <div id="details-korrosion" class="border border-gray-200 rounded-lg overflow-hidden fade-in-up">
+          <button class="accordion-header w-full px-6 py-4 flex justify-between items-center bg-white hover:bg-gray-50" onclick="toggleAccordion(this)">
+            <div class="flex items-center">
+              <i class="fas fa-shield-virus text-2xl mr-4" style="color: var(--color-danger);"></i>
+              <h3 class="text-xl font-semibold text-left" style="color: var(--color-text-primary);">Korrosion</h3>
+            </div>
+            <i class="accordion-icon fas fa-chevron-down text-gray-500"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 pb-6" style="color: var(--color-text-secondary);">
+              <p class="leading-relaxed mb-4">
+                Rost an Dachelementen ist eine häufig auftretende Folge nicht fachgerecht ausgeführter Installation. Korrosion kann diverse Ursachen haben und entsprechend vielfältige Folgen.
+              </p>
+              <p class="leading-relaxed">
+                Die Frage lautet aber keinesfalls OB, sondern WANN Stahl- und Eisenprodukte anfangen zu rosten und wie lange es dauert, bis der Schaden eine weitere Nutzung unmöglich macht. Deshalb sind Ursachenforschung, Schutzsysteme, uvm. äußerst wichtig.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: Feuchte Dämmung -->
+        <div id="details-daemmung" class="border border-gray-200 rounded-lg overflow-hidden fade-in-up">
+          <button class="accordion-header w-full px-6 py-4 flex justify-between items-center bg-white hover:bg-gray-50" onclick="toggleAccordion(this)">
+            <div class="flex items-center">
+              <i class="fas fa-tint text-2xl mr-4" style="color: var(--color-info);"></i>
+              <h3 class="text-xl font-semibold text-left" style="color: var(--color-text-primary);">Feuchte Dämmung</h3>
+            </div>
+            <i class="accordion-icon fas fa-chevron-down text-gray-500"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 pb-6" style="color: var(--color-text-secondary);">
+              <p class="leading-relaxed mb-4">
+                Feuchtigkeit und Wasser an der Fassade führen langfristig fast immer zu größeren Folgeschäden. Ist der Wasserablauf nicht gewährleistet, kann eine nasse Dämmung zu Rost und Schimmel führen.
+              </p>
+              <p class="leading-relaxed">
+                Eine zuverlässige Sanierung ist durch Vermeidung des Zusammentreffens von feuchtwarmer Luft mit kalten Bauteiloberflächen möglich. Nach Inaugenscheinnahme und stichprobenhafter Öffnung der Dachkonstruktion von außen konnte in diesem Fall davon ausgegangen werden, dass es sich nicht um Niederschlagswasser handelt, das von außen eindringt. Viel mehr gab es erhebliches Wasseraufkommen in der Dämmebene der Sandwichelemente im Dach, und zwar im Bereich der Längsstöße entlang der Traufe.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5: Undichtigkeit -->
+        <div id="details-undichtigkeit" class="border border-gray-200 rounded-lg overflow-hidden fade-in-up">
+          <button class="accordion-header w-full px-6 py-4 flex justify-between items-center bg-white hover:bg-gray-50" onclick="toggleAccordion(this)">
+            <div class="flex items-center">
+              <i class="fas fa-wind text-2xl mr-4" style="color: var(--color-gray-600);"></i>
+              <h3 class="text-xl font-semibold text-left" style="color: var(--color-text-primary);">Undichtigkeit</h3>
+            </div>
+            <i class="accordion-icon fas fa-chevron-down text-gray-500"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-6 pb-6" style="color: var(--color-text-secondary);">
+              <p class="leading-relaxed mb-4">
+                Luftzug oder Kälte am Fenster deutet auf Undichtigkeiten hin. Mangelhafte Isolation sorgt für höhere Heizkosten und kann zu teueren Folgeschäden durch Kondensation führen.
+              </p>
+              <p class="leading-relaxed mb-4">
+                Anschlüsse und Randausbildungen sind in ausgedehnten Bereichen gänzlich ohne, oder ohne ausreichende thermische Trennung erfolgt. Dichtbänder fehlen. Metallische Bauteile sind übergangslos aus dem beheizten Inneren des Gebäudes nach Außen geführt.
+              </p>
+              <p class="leading-relaxed">
+                Die flächenmäßige Ausdehnung dieser „Kühlrippen" sorgt für zu niedrige Temperaturen auf den Innenoberflächen der normal zu temperierenden Räume. Die Folgen können Schäden durch Kondensatausfall und Bildung von Schimmel im Inneren des Gebäudes sein, teilweise in nicht unmittelbar einsehbaren Bereichen wie zum Beispiel hinter den Trockenbauverkleidungen oder anderen Innenraumverkleidungen. Es ist ein unnötiger Wärmeverlust gegeben und damit entstehen höhere Kosten für die gebrauchsmäßige Beheizung des Gebäudes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       KONTAKT SECTION
+       ═══════════════════════════════════════════════════════ -->
+  <section id="kontakt" class="py-20 px-4" style="background-color: var(--color-bg-page);">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12 fade-in-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--color-text-primary);">
+          Kontaktieren Sie uns
+        </h2>
+        <p class="text-lg" style="color: var(--color-text-secondary);">
+          Für eine professionelle Erstberatung zu Ihrem Schadenfall
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl p-8 shadow-lg fade-in-up">
+        <form id="contact-form" class="space-y-6">
+          <!-- Name -->
+          <div>
+            <label for="name" class="block text-sm font-medium mb-2" style="color: var(--color-text-primary);">Name *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none"
+              placeholder="Ihr vollständiger Name"
+            >
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-medium mb-2" style="color: var(--color-text-primary);">E-Mail *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none"
+              placeholder="ihre.email@beispiel.de"
+            >
+          </div>
+
+          <!-- Telefon -->
+          <div>
+            <label for="phone" class="block text-sm font-medium mb-2" style="color: var(--color-text-primary);">Telefon</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none"
+              placeholder="+49 123 456789"
+            >
+          </div>
+
+          <!-- Schadenstyp -->
+          <div>
+            <label for="damage-type" class="block text-sm font-medium mb-2" style="color: var(--color-text-primary);">Art des Schadens</label>
+            <select
+              id="damage-type"
+              name="damage-type"
+              class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none"
+            >
+              <option value="">Bitte auswählen</option>
+              <option value="beulen">Optische Mängel und Beulen</option>
+              <option value="verschraubung">Mangelhafte Verschraubung</option>
+              <option value="korrosion">Korrosion und Rost</option>
+              <option value="daemmung">Feuchte Dämmung</option>
+              <option value="undichtigkeit">Undichtigkeit / Luftzug</option>
+              <option value="sonstiges">Sonstiges</option>
+            </select>
+          </div>
+
+          <!-- Nachricht -->
+          <div>
+            <label for="message" class="block text-sm font-medium mb-2" style="color: var(--color-text-primary);">Nachricht *</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none resize-none"
+              placeholder="Beschreiben Sie bitte Ihr Anliegen..."
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <button
+              type="submit"
+              class="btn w-full py-4 rounded-lg text-white font-semibold text-lg"
+              style="background-color: var(--color-primary-600);"
+            >
+              Nachricht senden
+            </button>
+          </div>
+
+          <!-- Privacy Notice -->
+          <p class="text-xs text-center" style="color: var(--color-text-muted);">
+            Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer Datenschutzerklärung zu.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════ -->
+  <footer class="py-12 px-4 bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <!-- Column 1: About -->
+        <div>
+          <h3 class="text-xl font-bold mb-4" style="color: var(--color-primary-600);">ZBN</h3>
+          <p class="text-sm" style="color: var(--color-text-secondary);">
+            Sachverständigenbüro für Begutachtung von Gebäudehüllen
+          </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div>
+          <h4 class="font-semibold mb-4" style="color: var(--color-text-primary);">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#begutachtung" class="text-gray-600 hover:text-gray-900">Begutachtung</a></li>
+            <li><a href="#schaeden" class="text-gray-600 hover:text-gray-900">Schäden</a></li>
+            <li><a href="#kontakt" class="text-gray-600 hover:text-gray-900">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Legal -->
+        <div>
+          <h4 class="font-semibold mb-4" style="color: var(--color-text-primary);">Rechtliches</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#impressum" class="text-gray-600 hover:text-gray-900">Impressum</a></li>
+            <li><a href="#datenschutz" class="text-gray-600 hover:text-gray-900">Datenschutz</a></li>
+            <li><a href="#agb" class="text-gray-600 hover:text-gray-900">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="pt-8 border-t border-gray-200 text-center">
+        <p class="text-sm" style="color: var(--color-text-muted);">
+          © 2025 ZBN Sachverständigenbüro. Alle Rechte vorbehalten.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════
+       JAVASCRIPT
+       ═══════════════════════════════════════════════════════ -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Mobile Dropdown Toggle
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+    mobileDropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const dropdownId = toggle.getAttribute('data-dropdown');
+        const dropdownMenu = document.querySelector(`[data-dropdown-menu="${dropdownId}"]`);
+        const dropdownIcon = toggle.querySelector('.mobile-dropdown-icon');
+
+        // Toggle the dropdown
+        dropdownMenu.classList.toggle('open');
+        dropdownIcon.classList.toggle('open');
+      });
+    });
+
+    // Accordion Toggle
+    function toggleAccordion(button) {
+      const header = button;
+      const content = button.nextElementSibling;
+
+      // Toggle expanded class
+      header.classList.toggle('expanded');
+      content.classList.toggle('expanded');
+    }
+
+    // Scroll Animation Observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth Scrolling for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const offsetTop = targetElement.offsetTop - 80; // Account for fixed nav
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Form Submission Handler
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Get form data
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData);
+
+      // Here you would normally send to a backend
+      console.log('Form submitted:', data);
+
+      // Show success message (simplified)
+      alert('Vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich bei Ihnen melden.');
+
+      // Reset form
+      contactForm.reset();
+    });
+
+    // Initialize Lucide Icons
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
