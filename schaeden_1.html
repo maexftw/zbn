@@ -15,7 +15,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -363,134 +365,6 @@
         transition-duration: 0.01ms !important;
       }
     }
-
-    /* Dropdown Navigation */
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-toggle {
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0;
-      font: inherit;
-    }
-
-    .dropdown-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 220px;
-      background: white;
-      border: 1px solid var(--color-gray-200);
-      border-radius: 0.5rem;
-      box-shadow: var(--shadow-lg);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px);
-      transition: all var(--duration-base) var(--ease-out);
-      z-index: 50;
-      margin-top: 0.5rem;
-    }
-
-    .dropdown:hover .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .dropdown-menu a {
-      display: block;
-      padding: 0.75rem 1rem;
-      color: var(--color-text-secondary);
-      text-decoration: none;
-      transition: all var(--duration-fast) var(--ease-out);
-      font-weight: 500;
-    }
-
-    .dropdown-menu a:hover {
-      background-color: var(--color-gray-50);
-      color: var(--color-primary-600);
-      padding-left: 1.25rem;
-    }
-
-    .dropdown-menu a:first-child {
-      border-radius: 0.5rem 0.5rem 0 0;
-    }
-
-    .dropdown-menu a:last-child {
-      border-radius: 0 0 0.5rem 0.5rem;
-    }
-
-    .dropdown-icon {
-      transition: transform var(--duration-fast) var(--ease-out);
-      display: inline-block;
-      margin-left: 0.25rem;
-      font-size: 0.75rem;
-    }
-
-    .dropdown:hover .dropdown-icon {
-      transform: rotate(180deg);
-    }
-
-    /* Mobile Dropdown */
-    .mobile-dropdown {
-      overflow: hidden;
-    }
-
-    .mobile-dropdown-toggle {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: none;
-      border: none;
-      padding: 0.5rem 0;
-      font: inherit;
-      color: var(--color-text-secondary);
-      font-weight: 500;
-      cursor: pointer;
-      text-align: left;
-    }
-
-    .mobile-dropdown-toggle:hover {
-      color: var(--color-text-primary);
-    }
-
-    .mobile-dropdown-menu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height var(--duration-base) var(--ease-out);
-      padding-left: 1rem;
-      border-left: 2px solid var(--color-gray-200);
-      margin-left: 0.5rem;
-    }
-
-    .mobile-dropdown-menu.open {
-      max-height: 500px;
-    }
-
-    .mobile-dropdown-menu a {
-      display: block;
-      padding: 0.5rem 0;
-      color: var(--color-text-secondary);
-      text-decoration: none;
-      font-size: 0.9375rem;
-    }
-
-    .mobile-dropdown-menu a:hover {
-      color: var(--color-primary-600);
-    }
-
-    .mobile-dropdown-icon {
-      transition: transform var(--duration-fast) var(--ease-out);
-      font-size: 0.75rem;
-    }
-
-    .mobile-dropdown-icon.open {
-      transform: rotate(180deg);
-    }
   </style>
 </head>
 <body>
@@ -500,56 +374,22 @@
        ═══════════════════════════════════════════════════════ -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
+      <div class="flex justify-between items-center h-24">
         <!-- Logo -->
         <div class="flex-shrink-0">
-          <a href="index_1.html" class="text-2xl font-bold" style="color: var(--color-primary-600);">
-            ZBN
+          <a href="index_1.html" class="flex items-center">
+            <img src="Logo-ZBN-1.png" alt="ZBN Civil Engineers" class="h-20 w-auto object-contain">
           </a>
         </div>
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-8">
           <a href="index_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Home</a>
-
-          <!-- Leistungen Dropdown -->
-          <div class="dropdown">
-            <button class="dropdown-toggle nav-link text-gray-900 font-medium flex items-center">
-              Leistungen
-              <i class="dropdown-icon fas fa-chevron-down"></i>
-            </button>
-            <div class="dropdown-menu">
-              <a href="gutachten_1.html">Planung</a>
-              <a href="schaeden_1.html">Begutachtung</a>
-              <a href="problemloesung_1.html">Beratung</a>
-              <a href="leichtbau_1.html">Leichtbau</a>
-            </div>
-          </div>
-
-          <!-- Wissen Dropdown -->
-          <div class="dropdown">
-            <button class="dropdown-toggle nav-link text-gray-700 hover:text-gray-900 font-medium flex items-center">
-              Wissen
-              <i class="dropdown-icon fas fa-chevron-down"></i>
-            </button>
-            <div class="dropdown-menu">
-              <a href="fachbeitrage_1.html">Fachbeiträge</a>
-              <a href="seminare_1.html">Seminare</a>
-            </div>
-          </div>
-
-          <!-- Unternehmen Dropdown -->
-          <div class="dropdown">
-            <button class="dropdown-toggle nav-link text-gray-700 hover:text-gray-900 font-medium flex items-center">
-              Unternehmen
-              <i class="dropdown-icon fas fa-chevron-down"></i>
-            </button>
-            <div class="dropdown-menu">
-              <a href="wir_1.html">Über uns</a>
-              <a href="karriere_1.html">Karriere</a>
-            </div>
-          </div>
-
+          <a href="gutachten_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Planung</a>
+          <a href="schaeden_1.html" class="nav-link text-gray-900 font-medium">Begutachtung</a>
+          <a href="problemloesung_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Beratung</a>
+          <a href="leichtbau_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Unser Fachgebiet</a>
+          <a href="wir_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Wir</a>
           <a href="kontakt_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Kontakt</a>
         </div>
 
@@ -561,48 +401,14 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-white border-t border-gray-200 shadow-lg max-h-[calc(100vh-4rem)] overflow-y-auto">
+    <div id="mobile-menu" class="nav-mobile-menu md:hidden absolute top-16 left-0 right-0 bg-white border-t border-gray-200 shadow-lg">
       <div class="px-4 py-4 space-y-3">
         <a href="index_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Home</a>
-
-        <!-- Leistungen Mobile Dropdown -->
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-toggle" data-dropdown="leistungen">
-            <span>Leistungen</span>
-            <i class="mobile-dropdown-icon fas fa-chevron-down"></i>
-          </button>
-          <div class="mobile-dropdown-menu" data-dropdown-menu="leistungen">
-            <a href="gutachten_1.html">Planung</a>
-            <a href="schaeden_1.html">Begutachtung</a>
-            <a href="problemloesung_1.html">Beratung</a>
-            <a href="leichtbau_1.html">Leichtbau</a>
-          </div>
-        </div>
-
-        <!-- Wissen Mobile Dropdown -->
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-toggle" data-dropdown="wissen">
-            <span>Wissen</span>
-            <i class="mobile-dropdown-icon fas fa-chevron-down"></i>
-          </button>
-          <div class="mobile-dropdown-menu" data-dropdown-menu="wissen">
-            <a href="fachbeitrage_1.html">Fachbeiträge</a>
-            <a href="seminare_1.html">Seminare</a>
-          </div>
-        </div>
-
-        <!-- Unternehmen Mobile Dropdown -->
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-toggle" data-dropdown="unternehmen">
-            <span>Unternehmen</span>
-            <i class="mobile-dropdown-icon fas fa-chevron-down"></i>
-          </button>
-          <div class="mobile-dropdown-menu" data-dropdown-menu="unternehmen">
-            <a href="wir_1.html">Über uns</a>
-            <a href="karriere_1.html">Karriere</a>
-          </div>
-        </div>
-
+        <a href="gutachten_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Planung</a>
+        <a href="schaeden_1.html" class="block py-2 text-gray-900 font-medium">Begutachtung</a>
+        <a href="problemloesung_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Beratung</a>
+        <a href="leichtbau_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Unser Fachgebiet</a>
+        <a href="wir_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Wir</a>
         <a href="kontakt_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Kontakt</a>
       </div>
     </div>
@@ -637,10 +443,13 @@
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16 fade-in-up">
         <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--color-text-primary);">
-          Unser Begutachtungsprozess
+          Begutachtung
         </h2>
-        <p class="text-lg" style="color: var(--color-text-secondary);">
-          Nicht bei jeder Begutachtung ist zwingend ein schriftliches Gutachten das Endergebnis
+        <p class="text-lg mb-4" style="color: var(--color-text-secondary);">
+          Vorweg: Nicht bei jeder Begutachtung ist zwingend ein schriftliches Gutachten das Endergebnis.
+        </p>
+        <p class="text-lg mb-4" style="color: var(--color-text-secondary);">
+          Folgende Vorgehensweisen wären möglich:
         </p>
       </div>
 
@@ -663,7 +472,7 @@
           </div>
           <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Ortstermin</h3>
           <p class="text-sm" style="color: var(--color-text-secondary);">
-            In den meisten Fällen ist eine fachgerechte Bewertung nur vor Ort möglich. Bei einem Ortstermin können wir eine Ersteinschätzung abgeben.
+            In den meisten Fällen ist eine fachgerechte und ganzheitliche Bewertung der Sachlage allerdings nicht nur anhand der Aktenlage zu beurteilen. Daher wird in der Regel ein Ortstermin notwendig. Bei einem Ortstermin können wir z.B. bei überschaubaren Mängeln eine Ersteinschätzung abgeben. Häufig finden sich weitere Mängel / Schäden oder Dinge, die als Ursache von Mängeln zu erkennen sind.
           </p>
         </div>
 
@@ -674,7 +483,7 @@
           </div>
           <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Gutachten</h3>
           <p class="text-sm" style="color: var(--color-text-secondary);">
-            Das Verfassen eines schriftlichen Berichtes und die Erstellung eines Gutachtens auf Ihre Bedürfnisse zugeschnitten.
+            Unser Fachgebiet umfasst auch die statische Berechnung / Überprüfung von Gegebenheiten. Weitere Ortstermine, das Verfassen eines schriftlichen Berichtes, die Erstellung eines Gutachtens, das Aufstellen eines Sanierungskonzeptes, uvm. – all das können wir Ihnen auf Ihre Bedürfnisse zugeschnitten anbieten.
           </p>
         </div>
 
@@ -683,18 +492,13 @@
           <div class="card-icon w-16 h-16 rounded-full flex items-center justify-center mb-4" style="background-color: var(--color-primary-100);">
             <i class="fas fa-wrench text-2xl" style="color: var(--color-primary-600);"></i>
           </div>
-          <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Sanierungskonzept</h3>
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Kosteninformation</h3>
           <p class="text-sm" style="color: var(--color-text-secondary);">
-            Das Aufstellen eines Sanierungskonzeptes und statische Berechnung – all das können wir Ihnen anbieten.
+            Selbstverständlich informieren wir Sie im Vorhinein über anfallende Kosten. Auch haben wir einige typische Mängel / Schäden in Wort und Schrift beschrieben, die in unser Fachgebiet fallen und uns häufig begegnen.
           </p>
         </div>
       </div>
 
-      <div class="mt-12 text-center fade-in-up">
-        <p class="text-lg" style="color: var(--color-text-secondary);">
-          Selbstverständlich informieren wir Sie im Vorhinein über anfallende Kosten.
-        </p>
-      </div>
     </div>
   </section>
 
@@ -715,16 +519,11 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Damage 1: Optische Mängel -->
         <div class="damage-card bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md fade-in-up stagger-item">
-          <div class="damage-image h-48 relative overflow-hidden">
-            <img src="images/61027c_0b000dc077764f9d8c6a64b46837dec7.webp"
-                 alt="Optische Mängel und Beulen"
-                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-              <i class="card-icon fas fa-exclamation-triangle text-6xl text-white" style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));"></i>
-            </div>
+          <div class="damage-image h-48 bg-gradient-to-br from-red-100 to-orange-100 flex items-center justify-center">
+            <i class="card-icon fas fa-exclamation-triangle text-6xl" style="color: var(--color-accent-500);"></i>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Optische Mängel und Beulen</h3>
@@ -739,13 +538,8 @@
 
         <!-- Damage 2: Verschraubung -->
         <div class="damage-card bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md fade-in-up stagger-item">
-          <div class="damage-image h-48 relative overflow-hidden">
-            <img src="images/61027c_4160d49ebda6470c98befdd9c5012a37-1.webp"
-                 alt="Falsche Verschraubung"
-                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-center justify-center">
-              <i class="card-icon fas fa-screwdriver text-6xl text-white" style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));"></i>
-            </div>
+          <div class="damage-image h-48 bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center">
+            <i class="card-icon fas fa-screwdriver text-6xl" style="color: var(--color-primary-500);"></i>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Falsche Verschraubung</h3>
@@ -760,13 +554,8 @@
 
         <!-- Damage 3: Korrosion -->
         <div class="damage-card bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md fade-in-up stagger-item">
-          <div class="damage-image h-48 relative overflow-hidden">
-            <img src="images/61027c_549f29c3c02b4c2b84d9bf2929220687.webp"
-                 alt="Korrosion und Rost"
-                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-center justify-center">
-              <i class="card-icon fas fa-shield-virus text-6xl text-white" style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));"></i>
-            </div>
+          <div class="damage-image h-48 bg-gradient-to-br from-orange-100 to-red-100 flex items-center justify-center">
+            <i class="card-icon fas fa-shield-virus text-6xl" style="color: var(--color-danger);"></i>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Korrosion und Rost</h3>
@@ -781,13 +570,8 @@
 
         <!-- Damage 4: Feuchte Dämmung -->
         <div class="damage-card bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md fade-in-up stagger-item">
-          <div class="damage-image h-48 relative overflow-hidden">
-            <img src="images/61027c_6a19caaf91544651b151b462e3f0ce2a.webp"
-                 alt="Feuchte Dämmung"
-                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-center justify-center">
-              <i class="card-icon fas fa-tint text-6xl text-white" style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));"></i>
-            </div>
+          <div class="damage-image h-48 bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center">
+            <i class="card-icon fas fa-tint text-6xl" style="color: var(--color-info);"></i>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Feuchte Dämmung</h3>
@@ -802,13 +586,8 @@
 
         <!-- Damage 5: Undichtigkeit -->
         <div class="damage-card bg-white rounded-xl overflow-hidden border border-gray-200 shadow-md fade-in-up stagger-item">
-          <div class="damage-image h-48 relative overflow-hidden">
-            <img src="images/61027c_710ce10d13904ab79cb7290ace3111a8.webp"
-                 alt="Undichtigkeit und Luftzug"
-                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-center justify-center">
-              <i class="card-icon fas fa-wind text-6xl text-white" style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));"></i>
-            </div>
+          <div class="damage-image h-48 bg-gradient-to-br from-gray-100 to-slate-100 flex items-center justify-center">
+            <i class="card-icon fas fa-wind text-6xl" style="color: var(--color-gray-600);"></i>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary);">Undichtigkeit Luftzug</h3>
@@ -1081,9 +860,8 @@
         <div>
           <h4 class="font-semibold mb-4" style="color: var(--color-text-primary);">Rechtliches</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="#impressum" class="text-gray-600 hover:text-gray-900">Impressum</a></li>
-            <li><a href="#datenschutz" class="text-gray-600 hover:text-gray-900">Datenschutz</a></li>
-            <li><a href="#agb" class="text-gray-600 hover:text-gray-900">AGB</a></li>
+            <li><a href="impressum_1.html" class="text-gray-600 hover:text-gray-900">Impressum</a></li>
+            <li><a href="datenschutz_1.html" class="text-gray-600 hover:text-gray-900">Datenschutz</a></li>
           </ul>
         </div>
       </div>
@@ -1106,21 +884,14 @@
     const mobileMenu = document.getElementById('mobile-menu');
 
     mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('open');
     });
 
-    // Mobile Dropdown Toggle
-    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
-
-    mobileDropdownToggles.forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const dropdownId = toggle.getAttribute('data-dropdown');
-        const dropdownMenu = document.querySelector(`[data-dropdown-menu="${dropdownId}"]`);
-        const dropdownIcon = toggle.querySelector('.mobile-dropdown-icon');
-
-        // Toggle the dropdown
-        dropdownMenu.classList.toggle('open');
-        dropdownIcon.classList.toggle('open');
+    // Close mobile menu when clicking a link
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
       });
     });
 

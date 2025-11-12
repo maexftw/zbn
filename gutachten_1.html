@@ -4,143 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planung - ZBN Civil Engineers</title>
-  <meta name="description" content="Verlegeplanung für Dächer, Fassadenplanung, statische Berechnungen und mehr - Unsere Planungsleistungen im Überblick.">
+  <meta name="description" content="Verlegeplanung für Dächer, Fassadenplanung (vorgehängte hinterlüftete Fassaden), Wandplanung für Hallen, statische Berechnungen und mehr - Unsere Planungsleistungen im Überblick.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    :root{--color-primary-500:oklch(0.52 0.15 240);--color-primary-600:oklch(0.45 0.14 240);--color-gray-50:oklch(0.98 0 0);--color-gray-100:oklch(0.96 0 0);--color-gray-200:oklch(0.90 0 0);--color-gray-600:oklch(0.42 0 0);--color-gray-700:oklch(0.35 0 0);--color-gray-900:oklch(0.15 0 0);--color-text-primary:oklch(0.15 0 0);--color-text-secondary:oklch(0.42 0 0);--font-sans:'Inter',sans-serif;--duration-fast:150ms;--duration-base:250ms;--ease-out:cubic-bezier(0,0,0.2,1);--shadow-lg:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05)}
+    :root{--color-primary-500:oklch(0.52 0.15 240);--color-primary-600:oklch(0.45 0.14 240);--color-gray-50:oklch(0.98 0 0);--color-gray-900:oklch(0.15 0 0);--color-gray-600:oklch(0.42 0 0);--font-sans:'Inter',sans-serif}
     body{font-family:var(--font-sans)!important;background-color:var(--color-gray-50)!important}
     .service-icon{transition:transform 250ms}
     .service-card:hover .service-icon{transform:scale(1.1)}
-    .nav-link{position:relative;transition:color var(--duration-fast) var(--ease-out)}
-    .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--color-primary-500);transition:width var(--duration-base) var(--ease-out)}
-    .nav-link:hover::after{width:100%}
-    .dropdown{position:relative}
-    .dropdown-toggle{cursor:pointer;background:none;border:none;padding:0;font:inherit}
-    .dropdown-menu{position:absolute;top:100%;left:0;min-width:220px;background:white;border:1px solid var(--color-gray-200);border-radius:0.5rem;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(-10px);transition:all var(--duration-base) var(--ease-out);z-index:50;margin-top:0.5rem}
-    .dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
-    .dropdown-menu a{display:block;padding:0.75rem 1rem;color:var(--color-text-secondary);text-decoration:none;transition:all var(--duration-fast) var(--ease-out);font-weight:500}
-    .dropdown-menu a:hover{background-color:var(--color-gray-50);color:var(--color-primary-600);padding-left:1.25rem}
-    .dropdown-menu a:first-child{border-radius:0.5rem 0.5rem 0 0}
-    .dropdown-menu a:last-child{border-radius:0 0 0.5rem 0.5rem}
-    .dropdown-icon{transition:transform var(--duration-fast) var(--ease-out);display:inline-block;margin-left:0.25rem;font-size:0.75rem}
-    .dropdown:hover .dropdown-icon{transform:rotate(180deg)}
-    .mobile-dropdown{overflow:hidden}
-    .mobile-dropdown-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;padding:0.5rem 0;font:inherit;color:var(--color-text-secondary);font-weight:500;cursor:pointer;text-align:left}
-    .mobile-dropdown-toggle:hover{color:var(--color-text-primary)}
-    .mobile-dropdown-menu{max-height:0;overflow:hidden;transition:max-height var(--duration-base) var(--ease-out);padding-left:1rem;border-left:2px solid var(--color-gray-200);margin-left:0.5rem}
-    .mobile-dropdown-menu.open{max-height:500px}
-    .mobile-dropdown-menu a{display:block;padding:0.5rem 0;color:var(--color-text-secondary);text-decoration:none;font-size:0.9375rem}
-    .mobile-dropdown-menu a:hover{color:var(--color-primary-600)}
-    .mobile-dropdown-icon{transition:transform var(--duration-fast) var(--ease-out);font-size:0.75rem}
-    .mobile-dropdown-icon.open{transform:rotate(180deg)}
   </style>
 </head>
 <body>
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <div class="flex-shrink-0">
-          <a href="index_1.html" class="text-2xl font-bold" style="color:var(--color-primary-600)">ZBN</a>
-        </div>
-
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-8">
-          <a href="index_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Home</a>
-
-          <!-- Leistungen Dropdown -->
-          <div class="dropdown">
-            <button class="dropdown-toggle nav-link text-gray-900 font-medium flex items-center">
-              Leistungen
-              <i class="dropdown-icon fas fa-chevron-down"></i>
-            </button>
-            <div class="dropdown-menu">
-              <a href="gutachten_1.html">Planung</a>
-              <a href="schaeden_1.html">Begutachtung</a>
-              <a href="problemloesung_1.html">Beratung</a>
-              <a href="leichtbau_1.html">Leichtbau</a>
-            </div>
-          </div>
-
-          <!-- Wissen Dropdown -->
-          <div class="dropdown">
-            <button class="dropdown-toggle nav-link text-gray-700 hover:text-gray-900 font-medium flex items-center">
-              Wissen
-              <i class="dropdown-icon fas fa-chevron-down"></i>
-            </button>
-            <div class="dropdown-menu">
-              <a href="fachbeitrage_1.html">Fachbeiträge</a>
-              <a href="seminare_1.html">Seminare</a>
-            </div>
-          </div>
-
-          <!-- Unternehmen Dropdown -->
-          <div class="dropdown">
-            <button class="dropdown-toggle nav-link text-gray-700 hover:text-gray-900 font-medium flex items-center">
-              Unternehmen
-              <i class="dropdown-icon fas fa-chevron-down"></i>
-            </button>
-            <div class="dropdown-menu">
-              <a href="wir_1.html">Über uns</a>
-              <a href="karriere_1.html">Karriere</a>
-            </div>
-          </div>
-
-          <a href="kontakt_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Kontakt</a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
-          <i class="fas fa-bars text-xl"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-white border-t border-gray-200 shadow-lg max-h-[calc(100vh-4rem)] overflow-y-auto">
-      <div class="px-4 py-4 space-y-3">
-        <a href="index_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Home</a>
-
-        <!-- Leistungen Mobile Dropdown -->
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-toggle" data-dropdown="leistungen">
-            <span>Leistungen</span>
-            <i class="mobile-dropdown-icon fas fa-chevron-down"></i>
-          </button>
-          <div class="mobile-dropdown-menu" data-dropdown-menu="leistungen">
-            <a href="gutachten_1.html">Planung</a>
-            <a href="schaeden_1.html">Begutachtung</a>
-            <a href="problemloesung_1.html">Beratung</a>
-            <a href="leichtbau_1.html">Leichtbau</a>
-          </div>
-        </div>
-
-        <!-- Wissen Mobile Dropdown -->
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-toggle" data-dropdown="wissen">
-            <span>Wissen</span>
-            <i class="mobile-dropdown-icon fas fa-chevron-down"></i>
-          </button>
-          <div class="mobile-dropdown-menu" data-dropdown-menu="wissen">
-            <a href="fachbeitrage_1.html">Fachbeiträge</a>
-            <a href="seminare_1.html">Seminare</a>
-          </div>
-        </div>
-
-        <!-- Unternehmen Mobile Dropdown -->
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-toggle" data-dropdown="unternehmen">
-            <span>Unternehmen</span>
-            <i class="mobile-dropdown-icon fas fa-chevron-down"></i>
-          </button>
-          <div class="mobile-dropdown-menu" data-dropdown-menu="unternehmen">
-            <a href="wir_1.html">Über uns</a>
-            <a href="karriere_1.html">Karriere</a>
-          </div>
-        </div>
-
-        <a href="kontakt_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Kontakt</a>
+    <div class="max-w-7xl mx-auto px-4 h-24 flex justify-between items-center">
+      <a href="index_1.html" class="flex items-center"><img src="Logo-ZBN-1.png" alt="ZBN Civil Engineers" class="h-20 w-auto object-contain"></a>
+      <div class="hidden md:flex space-x-8">
+        <a href="index_1.html" class="text-gray-700 hover:text-gray-900 font-medium">Home</a>
+        <a href="gutachten_1.html" class="text-gray-900 font-medium">Planung</a>
+        <a href="schaeden_1.html" class="text-gray-700 hover:text-gray-900 font-medium">Begutachtung</a>
+        <a href="problemloesung_1.html" class="text-gray-700 hover:text-gray-900 font-medium">Beratung</a>
+        <a href="kontakt_1.html" class="text-gray-700 hover:text-gray-900 font-medium">Kontakt</a>
       </div>
     </div>
   </nav>
@@ -149,51 +35,34 @@
     <div class="max-w-4xl mx-auto text-center">
       <i class="fas fa-drafting-compass text-6xl mb-6" style="color:var(--color-primary-500)"></i>
       <h1 class="text-5xl font-bold mb-6">Planung</h1>
-      <p class="text-xl text-gray-600">Professionelle Planungsleistungen für Dächer, Fassaden und Hallenkonstruktionen</p>
+      <p class="text-xl text-gray-600">Professionelle Planungsleistungen für Dächer, vorgehängte hinterlüftete Fassaden und Hallenkonstruktionen</p>
     </div>
   </section>
 
   <section class="py-20 px-4 bg-white">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold mb-4">Unsere Leistungen im Bereich Planung</h2>
+        <h2 class="text-3xl font-bold mb-4">Unsere Leistungen im Bereich Planung:</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="service-card bg-gray-50 rounded-xl p-6 border border-gray-200">
           <i class="service-icon fas fa-building text-4xl mb-4" style="color:var(--color-primary-600)"></i>
-          <h3 class="text-xl font-semibold mb-3">Verlegeplanung für Dächer</h3>
-          <p class="text-gray-600">Verlegeplanung für Dächer unterschiedlicher Bauweise mit präzisen Ausführungsplänen</p>
-        </div>
-
-        <div class="service-card bg-gray-50 rounded-xl p-6 border border-gray-200">
-          <i class="service-icon fas fa-th-large text-4xl mb-4" style="color:var(--color-primary-600)"></i>
-          <h3 class="text-xl font-semibold mb-3">Fassadenplanung</h3>
-          <p class="text-gray-600">Fassaden unterschiedlicher Bauweise aus Stahl-/Stahlleichtbauprofilen</p>
-        </div>
-
-        <div class="service-card bg-gray-50 rounded-xl p-6 border border-gray-200">
-          <i class="service-icon fas fa-layer-group text-4xl mb-4" style="color:var(--color-primary-600)"></i>
-          <h3 class="text-xl font-semibold mb-3">Unterkonstruktionen</h3>
-          <p class="text-gray-600">Planung von Unterkonstruktionen für hinterlüftete Fassaden</p>
+          <h3 class="text-xl font-semibold mb-3">Verlegeplanung</h3>
+          <p class="text-gray-600">Verlegeplanung für Dächer unterschiedlicher Bauweise, Fassaden unterschiedlicher Bauweise, für aus Stahl-/Stahlleichtbauprofilen sowie von Unterkonstruktionen für hinterlüftete Fassaden</p>
         </div>
 
         <div class="service-card bg-gray-50 rounded-xl p-6 border border-gray-200">
           <i class="service-icon fas fa-cogs text-4xl mb-4" style="color:var(--color-primary-600)"></i>
           <h3 class="text-xl font-semibold mb-3">Ergänzende Konstruktionen</h3>
-          <p class="text-gray-600">Cellformträger, Attikastiele, Torunterkonstruktionen, Sekuranten etc.</p>
+          <p class="text-gray-600">Planung von ergänzenden Konstruktionen wie Cellformträger, Attikastiele, Torunterkonstruktionen, Sekuranten etc.</p>
         </div>
 
         <div class="service-card bg-gray-50 rounded-xl p-6 border border-gray-200">
           <i class="service-icon fas fa-file-alt text-4xl mb-4" style="color:var(--color-primary-600)"></i>
-          <h3 class="text-xl font-semibold mb-3">Werkstattzeichnungen</h3>
-          <p class="text-gray-600">Erstellen von Stücklisten und Werkstattzeichnungen für alle Planungen</p>
-        </div>
-
-        <div class="service-card bg-gray-50 rounded-xl p-6 border border-gray-200">
-          <i class="service-icon fas fa-calculator text-4xl mb-4" style="color:var(--color-primary-600)"></i>
-          <h3 class="text-xl font-semibold mb-3">Massenermittlungen</h3>
-          <p class="text-gray-600">Massenermittlungen zu Kalkulationszwecken und Projektplanung</p>
+          <h3 class="text-xl font-semibold mb-3">Stücklisten/Werkstattzeichnungen</h3>
+          <p class="text-gray-600 mb-2">Erstellen von Stücklisten/Werkstattzeichnungen für die o. g. Planungen</p>
+          <p class="text-gray-600">Erstellen von Massenermittlungen z. B. zu Kalkulationszwecken</p>
         </div>
 
         <div class="service-card bg-gray-50 rounded-xl p-6 border border-gray-200">
@@ -201,99 +70,47 @@
           <h3 class="text-xl font-semibold mb-3">Revisionsunterlagen</h3>
           <p class="text-gray-600">Zusammenstellen von Revisionsunterlagen nach Abschluss der Baumaßnahmen</p>
         </div>
-
-        <div class="service-card bg-gray-50 rounded-xl p-6 border border-gray-200">
-          <i class="service-icon fas fa-calculator-alt text-4xl mb-4" style="color:var(--color-primary-600)"></i>
-          <h3 class="text-xl font-semibold mb-3">Statische Berechnungen</h3>
-          <p class="text-gray-600">Statische Berechnungen und Nachweise für Ihre Projekte</p>
-        </div>
-
-        <div class="service-card bg-gray-50 rounded-xl p-6 border border-gray-200">
-          <i class="service-icon fas fa-compass text-4xl mb-4" style="color:var(--color-primary-600)"></i>
-          <h3 class="text-xl font-semibold mb-3">Wandplanung für Hallen</h3>
-          <p class="text-gray-600">Planung von Wandelementen für Industrie- und Gewerbehallen</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 px-4" style="background-color:var(--color-gray-50)">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold mb-4">Unsere Projektphasen</h2>
-        <p class="text-xl text-gray-600">Von der ersten Idee bis zur erfolgreichen Umsetzung</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-        <div class="bg-white rounded-xl overflow-hidden shadow-md">
-          <div class="h-48 relative overflow-hidden">
-            <img src="images/Phase-1-3969587-1024x1024.jpg"
-                 alt="Phase 1: Konzept"
-                 class="w-full h-full object-cover">
-            <div class="absolute top-4 left-4 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl">1</div>
-          </div>
-          <div class="p-4">
-            <h3 class="text-lg font-semibold mb-2">Konzept</h3>
-            <p class="text-sm text-gray-600">Anforderungsanalyse und Projektplanung</p>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-xl overflow-hidden shadow-md">
-          <div class="h-48 relative overflow-hidden">
-            <img src="images/Phase-2-20944874-1024x1024.jpg"
-                 alt="Phase 2: Planung"
-                 class="w-full h-full object-cover">
-            <div class="absolute top-4 left-4 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl">2</div>
-          </div>
-          <div class="p-4">
-            <h3 class="text-lg font-semibold mb-2">Planung</h3>
-            <p class="text-sm text-gray-600">Detaillierte Ausführungsplanung</p>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-xl overflow-hidden shadow-md">
-          <div class="h-48 relative overflow-hidden">
-            <img src="images/Phase-3-59867-1024x745.jpg"
-                 alt="Phase 3: Berechnung"
-                 class="w-full h-full object-cover">
-            <div class="absolute top-4 left-4 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl">3</div>
-          </div>
-          <div class="p-4">
-            <h3 class="text-lg font-semibold mb-2">Berechnung</h3>
-            <p class="text-sm text-gray-600">Statische Nachweise und Dimensionierung</p>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-xl overflow-hidden shadow-md">
-          <div class="h-48 relative overflow-hidden">
-            <img src="images/Phase-4-4739232-1024x1024.jpg"
-                 alt="Phase 4: Ausführung"
-                 class="w-full h-full object-cover">
-            <div class="absolute top-4 left-4 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl">4</div>
-          </div>
-          <div class="p-4">
-            <h3 class="text-lg font-semibold mb-2">Ausführung</h3>
-            <p class="text-sm text-gray-600">Werkstattzeichnungen und Bauleitung</p>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-xl overflow-hidden shadow-md">
-          <div class="h-48 relative overflow-hidden">
-            <img src="images/Phase-5-5051411-1024x1024.jpg"
-                 alt="Phase 5: Dokumentation"
-                 class="w-full h-full object-cover">
-            <div class="absolute top-4 left-4 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl">5</div>
-          </div>
-          <div class="p-4">
-            <h3 class="text-lg font-semibold mb-2">Dokumentation</h3>
-            <p class="text-sm text-gray-600">Revisionsunterlagen und Übergabe</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
   <section class="py-20 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <div class="mb-6">
+          <i class="fas fa-calculator text-6xl mb-4" style="color:var(--color-primary-600)"></i>
+        </div>
+        <h2 class="text-3xl font-bold mb-4">Unsere Leistungen im Bereich Statik (Standsicherheitsnachweis):</h2>
+      </div>
+      
+      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-200">
+        <ol class="space-y-4 text-gray-700">
+          <li class="flex items-start">
+            <span class="font-semibold mr-2">1.</span>
+            <span>Statische Berechnung von Dacheindeckungen und Wandbekleidungen aus Trapezblechprofilen bzw. Sandwichpaneelen oder Kassetten.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="font-semibold mr-2">2.</span>
+            <span>Berechnung von Unterkonstruktionen aus Leichtbauprofilen (z.B. C- bzw. Z-Profile)</span>
+          </li>
+          <li class="flex items-start">
+            <span class="font-semibold mr-2">3.</span>
+            <span>Nachweise für Fassadenbekleidungen inkl. Unterkonstruktion (z.B. Glasfassaden, Fassaden aus Faserzementtafeln oder Aluminiumplatten)</span>
+          </li>
+          <li class="flex items-start">
+            <span class="font-semibold mr-2">4.</span>
+            <span>Bemessung und Konstruktion von Dach-Cellformträgern aus Stahl, Anschlüssen bzw. Einbauteilen</span>
+          </li>
+          <li class="flex items-start">
+            <span class="font-semibold mr-2">5.</span>
+            <span>Statische Untersuchung von Bestandskonstruktionen bzw. Erarbeitung von Sanierungsvorschlägen.</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4" style="background-color:var(--color-gray-50)">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-6">Haben Sie ein Planungsprojekt?</h2>
       <p class="text-xl text-gray-600 mb-8">Kontaktieren Sie uns für ein unverbindliches Angebot</p>
@@ -336,30 +153,5 @@
       <p class="text-sm text-gray-600">© 2025 ZBN Civil Engineers GmbH</p>
     </div>
   </footer>
-
-  <script>
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Mobile Dropdown Toggle
-    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
-
-    mobileDropdownToggles.forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const dropdownId = toggle.getAttribute('data-dropdown');
-        const dropdownMenu = document.querySelector(`[data-dropdown-menu="${dropdownId}"]`);
-        const dropdownIcon = toggle.querySelector('.mobile-dropdown-icon');
-
-        // Toggle the dropdown
-        dropdownMenu.classList.toggle('open');
-        dropdownIcon.classList.toggle('open');
-      });
-    });
-  </script>
 </body>
 </html>
