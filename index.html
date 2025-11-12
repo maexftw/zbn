@@ -263,51 +263,35 @@
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-24">
-        <!-- Logo -->
-        <div class="flex-shrink-0">
-          <a href="index_1.html" class="flex items-center">
-            <img src="Logo-ZBN-1.png" alt="ZBN Civil Engineers" class="h-20 w-auto object-contain">
-          </a>
+        <a href="index_1.html" class="flex items-center">
+          <img src="Logo-ZBN-1.png" alt="ZBN Civil Engineers" class="h-20 w-auto object-contain">
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-base font-medium">
+          <a href="index_1.html" class="text-gray-900 font-semibold">Home</a>
+          <a href="gutachten_1.html" class="text-gray-700 hover:text-gray-900">Planung</a>
+          <a href="schaeden_1.html" class="text-gray-700 hover:text-gray-900">Begutachtung</a>
+          <a href="beispielgutachten_1.html" class="text-gray-700 hover:text-gray-900">Beispielgutachten</a>
+          <a href="problemloesung_1.html" class="text-gray-700 hover:text-gray-900">Beratung</a>
+          <a href="leichtbau_1.html" class="text-gray-700 hover:text-gray-900">Unser Fachgebiet</a>
+          <a href="wir_1.html" class="text-gray-700 hover:text-gray-900">Wir</a>
+          <a href="kontakt_1.html" class="text-gray-700 hover:text-gray-900">Kontakt</a>
         </div>
-
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-8">
-          <a href="index_1.html" class="nav-link text-gray-900 font-medium">Home</a>
-          <div class="relative group">
-            <a href="gutachten_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Planung</a>
-          </div>
-          <div class="relative group">
-            <a href="schaeden_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Begutachtung</a>
-          </div>
-          <div class="relative group">
-            <a href="problemloesung_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Beratung</a>
-          </div>
-          <div class="relative group">
-            <a href="leichtbau_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Unser Fachgebiet</a>
-          </div>
-          <div class="relative group">
-            <a href="wir_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Wir</a>
-          </div>
-          <a href="kontakt_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Kontakt</a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
-          <i class="fas fa-bars text-xl"></i>
+        <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+          <span class="sr-only">Menü öffnen</span>
+          <i class="fas fa-bars text-2xl"></i>
         </button>
       </div>
     </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-white border-t border-gray-200 shadow-lg">
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white shadow-lg">
       <div class="px-4 py-4 space-y-3">
-        <a href="index_1.html" class="block py-2 text-gray-900 font-medium">Home</a>
-        <a href="gutachten_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Planung</a>
-        <a href="schaeden_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Begutachtung</a>
-        <a href="problemloesung_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Beratung</a>
-        <a href="leichtbau_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Unser Fachgebiet</a>
-        <a href="wir_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Wir</a>
-        <a href="kontakt_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Kontakt</a>
+        <a href="index_1.html" class="block py-2 text-gray-900 font-semibold">Home</a>
+        <a href="gutachten_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Planung</a>
+        <a href="schaeden_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Begutachtung</a>
+        <a href="beispielgutachten_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Beispielgutachten</a>
+        <a href="problemloesung_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Beratung</a>
+        <a href="leichtbau_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Unser Fachgebiet</a>
+        <a href="wir_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Wir</a>
+        <a href="kontakt_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Kontakt</a>
       </div>
     </div>
   </nav>
@@ -496,15 +480,28 @@
     </div>
   </footer>
 
+  <!-- COOKIE CONSENT -->
+  <div id="cookie-banner" class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] max-w-3xl rounded-xl border border-gray-200 bg-white shadow-xl px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4 z-[100]">
+    <p class="text-sm text-gray-700 leading-relaxed">
+      Wir verwenden ausschließlich technisch notwendige Cookies. Die Auslieferung erfolgt über Cloudflare Pages (DSGVO-konformer Auftragsverarbeiter).
+      Weitere Informationen findest du in unserer <a href="datenschutz_1.html" class="underline text-indigo-600 hover:text-indigo-800">Datenschutzerklärung</a>.
+    </p>
+    <button id="cookie-accept" class="inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+      Verstanden
+    </button>
+  </div>
+
   <!-- JAVASCRIPT -->
   <script>
     // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
 
     // Scroll Animation Observer
     const observerOptions = {
@@ -541,6 +538,26 @@
         }
       });
     });
+
+    // Cookie Banner
+    (function() {
+      const banner = document.getElementById('cookie-banner');
+      const acceptBtn = document.getElementById('cookie-accept');
+
+      if (!banner || !acceptBtn) {
+        return;
+      }
+
+      if (localStorage.getItem('zbnCookieConsent') === 'accepted') {
+        banner.remove();
+        return;
+      }
+
+      acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('zbnCookieConsent', 'accepted');
+        banner.remove();
+      });
+    })();
   </script>
 </body>
 </html>

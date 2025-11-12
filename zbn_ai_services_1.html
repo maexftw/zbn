@@ -1473,6 +1473,17 @@
         </div>
     </footer>
 
+    <!-- COOKIE CONSENT -->
+    <div id="cookie-banner" class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] max-w-3xl rounded-xl border border-gray-200 bg-white/95 backdrop-blur px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4 z-[200]">
+        <p class="text-sm text-gray-700 leading-relaxed">
+            Wir verwenden ausschließlich technisch notwendige Cookies. Die Auslieferung erfolgt über Cloudflare Pages (DSGVO-konformer Auftragsverarbeiter).
+            Details findest du in unserer <a href="datenschutz_1.html" class="underline text-indigo-400 hover:text-indigo-200">Datenschutzerklärung</a>.
+        </p>
+        <button id="cookie-accept" class="inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-white bg-indigo-500 hover:bg-indigo-400 rounded-lg transition-colors">
+            Verstanden
+        </button>
+    </div>
+
     <!-- ============================================
          JAVASCRIPT - GSAP ANIMATIONS & INTERACTIONS
          ============================================ -->
@@ -1718,12 +1729,36 @@
             initScrollAnimations();
             initNavScroll();
             initSmoothScroll();
+            initCookieBanner();
         });
 
         // Refresh ScrollTrigger on resize
         window.addEventListener('resize', () => {
             ScrollTrigger.refresh();
         });
+
+        // ============================================
+        // COOKIE BANNER
+        // ============================================
+
+        function initCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+
+            if (!banner || !acceptBtn) {
+                return;
+            }
+
+            if (localStorage.getItem('zbnCookieConsent') === 'accepted') {
+                banner.remove();
+                return;
+            }
+
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('zbnCookieConsent', 'accepted');
+                banner.remove();
+            });
+        }
     </script>
 
 </body>
