@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kontakt - ZBN Civil Engineers</title>
-  <meta name="description" content="Kontaktieren Sie ZBN Civil Engineers. Nutzen Sie unser Kontaktformular oder rufen Sie uns direkt an.">
+  <meta name="description" content="Kontaktieren Sie ZBN Civil Engineers. Rufen Sie uns direkt an oder schreiben Sie uns eine E-Mail.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     :root {
@@ -69,78 +71,29 @@
       border-color: var(--color-primary-500) !important;
       box-shadow: 0 0 0 3px oklch(0.85 0.04 240) !important;
     }
-
-    .nav-link{position:relative;transition:color var(--duration-fast) var(--ease-out)}.nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--color-primary-500);transition:width 250ms var(--ease-out)}.nav-link:hover::after{width:100%}.dropdown{position:relative}.dropdown-toggle{cursor:pointer;background:none;border:none;padding:0;font:inherit}.dropdown-menu{position:absolute;top:100%;left:0;min-width:220px;background:white;border:1px solid var(--color-gray-200);border-radius:0.5rem;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(-10px);transition:all 250ms var(--ease-out);z-index:50;margin-top:0.5rem}.dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-menu a{display:block;padding:0.75rem 1rem;color:var(--color-text-secondary);text-decoration:none;transition:all var(--duration-fast) var(--ease-out);font-weight:500}.dropdown-menu a:hover{background-color:var(--color-gray-50);color:var(--color-primary-600);padding-left:1.25rem}.dropdown-menu a:first-child{border-radius:0.5rem 0.5rem 0 0}.dropdown-menu a:last-child{border-radius:0 0 0.5rem 0.5rem}.dropdown-icon{transition:transform var(--duration-fast) var(--ease-out);display:inline-block;margin-left:0.25rem;font-size:0.75rem}.dropdown:hover .dropdown-icon{transform:rotate(180deg)}.mobile-dropdown{overflow:hidden}.mobile-dropdown-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;padding:0.5rem 0;font:inherit;color:var(--color-text-secondary);font-weight:500;cursor:pointer;text-align:left}.mobile-dropdown-toggle:hover{color:var(--color-text-primary)}.mobile-dropdown-menu{max-height:0;overflow:hidden;transition:max-height 250ms var(--ease-out);padding-left:1rem;border-left:2px solid var(--color-gray-200);margin-left:0.5rem}.mobile-dropdown-menu.open{max-height:500px}.mobile-dropdown-menu a{display:block;padding:0.5rem 0;color:var(--color-text-secondary);text-decoration:none;font-size:0.9375rem}.mobile-dropdown-menu a:hover{color:var(--color-primary-600)}.mobile-dropdown-icon{transition:transform var(--duration-fast) var(--ease-out);font-size:0.75rem}.mobile-dropdown-icon.open{transform:rotate(180deg)}
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- NAVIGATION (same as index) -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
+      <div class="flex justify-between items-center h-24">
         <div class="flex-shrink-0">
-          <a href="index_1.html" class="text-2xl font-bold" style="color: var(--color-primary-600);">ZBN</a>
+          <a href="index_1.html" class="flex items-center"><img src="Logo-ZBN-1.png" alt="ZBN Civil Engineers" class="h-20 w-auto object-contain"></a>
         </div>
         <div class="hidden md:flex space-x-8">
-          <a href="index_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Home</a>
-          <div class="dropdown">
-            <button class="dropdown-toggle nav-link text-gray-700 hover:text-gray-900 font-medium flex items-center">Leistungen<i class="dropdown-icon fas fa-chevron-down"></i></button>
-            <div class="dropdown-menu">
-              <a href="gutachten_1.html">Planung</a>
-              <a href="schaeden_1.html">Begutachtung</a>
-              <a href="problemloesung_1.html">Beratung</a>
-              <a href="leichtbau_1.html">Leichtbau</a>
-            </div>
-          </div>
-          <div class="dropdown">
-            <button class="dropdown-toggle nav-link text-gray-700 hover:text-gray-900 font-medium flex items-center">Wissen<i class="dropdown-icon fas fa-chevron-down"></i></button>
-            <div class="dropdown-menu">
-              <a href="fachbeitrage_1.html">Fachbeiträge</a>
-              <a href="seminare_1.html">Seminare</a>
-            </div>
-          </div>
-          <div class="dropdown">
-            <button class="dropdown-toggle nav-link text-gray-700 hover:text-gray-900 font-medium flex items-center">Unternehmen<i class="dropdown-icon fas fa-chevron-down"></i></button>
-            <div class="dropdown-menu">
-              <a href="wir_1.html">Über uns</a>
-              <a href="karriere_1.html">Karriere</a>
-            </div>
-          </div>
-          <a href="kontakt_1.html" class="nav-link text-gray-900 font-medium">Kontakt</a>
+          <a href="index_1.html" class="text-gray-700 hover:text-gray-900 font-medium">Home</a>
+          <a href="gutachten_1.html" class="text-gray-700 hover:text-gray-900 font-medium">Planung</a>
+          <a href="schaeden_1.html" class="text-gray-700 hover:text-gray-900 font-medium">Begutachtung</a>
+          <a href="problemloesung_1.html" class="text-gray-700 hover:text-gray-900 font-medium">Beratung</a>
+          <a href="leichtbau_1.html" class="text-gray-700 hover:text-gray-900 font-medium">Unser Fachgebiet</a>
+          <a href="wir_1.html" class="text-gray-700 hover:text-gray-900 font-medium">Wir</a>
+          <a href="kontakt_1.html" class="text-gray-900 font-medium">Kontakt</a>
         </div>
         <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
           <i class="fas fa-bars text-xl"></i>
         </button>
-      </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-white border-t border-gray-200 shadow-lg max-h-[calc(100vh-4rem)] overflow-y-auto">
-      <div class="px-4 py-4 space-y-3">
-        <a href="index_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Home</a>
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-toggle" data-dropdown="leistungen"><span>Leistungen</span><i class="mobile-dropdown-icon fas fa-chevron-down"></i></button>
-          <div class="mobile-dropdown-menu" data-dropdown-menu="leistungen">
-            <a href="gutachten_1.html">Planung</a>
-            <a href="schaeden_1.html">Begutachtung</a>
-            <a href="problemloesung_1.html">Beratung</a>
-            <a href="leichtbau_1.html">Leichtbau</a>
-          </div>
-        </div>
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-toggle" data-dropdown="wissen"><span>Wissen</span><i class="mobile-dropdown-icon fas fa-chevron-down"></i></button>
-          <div class="mobile-dropdown-menu" data-dropdown-menu="wissen">
-            <a href="fachbeitrage_1.html">Fachbeiträge</a>
-            <a href="seminare_1.html">Seminare</a>
-          </div>
-        </div>
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-toggle" data-dropdown="unternehmen"><span>Unternehmen</span><i class="mobile-dropdown-icon fas fa-chevron-down"></i></button>
-          <div class="mobile-dropdown-menu" data-dropdown-menu="unternehmen">
-            <a href="wir_1.html">Über uns</a>
-            <a href="karriere_1.html">Karriere</a>
-          </div>
-        </div>
-        <a href="kontakt_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Kontakt</a>
       </div>
     </div>
   </nav>
@@ -155,44 +108,9 @@
     </div>
   </section>
 
-  <!-- CONTACT GRID -->
+  <!-- CONTACT INFO -->
   <section class="py-16 px-4">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-
-      <!-- CONTACT FORM -->
-      <div class="bg-white rounded-xl p-8 shadow-md">
-        <h2 class="text-2xl font-bold mb-6" style="color: var(--color-text-primary);">Kontaktformular</h2>
-        <form id="contact-form" class="space-y-6">
-          <div>
-            <label class="block text-sm font-medium mb-2" style="color: var(--color-text-primary);">Name *</label>
-            <input type="text" required class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none">
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-2" style="color: var(--color-text-primary);">E-Mail *</label>
-            <input type="email" required class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none">
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-2" style="color: var(--color-text-primary);">Telefon</label>
-            <input type="tel" class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none">
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-2" style="color: var(--color-text-primary);">Betreff</label>
-            <input type="text" class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none">
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-2" style="color: var(--color-text-primary);">Nachricht *</label>
-            <textarea required rows="5" class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none resize-none"></textarea>
-          </div>
-          <button type="submit" class="btn w-full py-4 rounded-lg text-white font-semibold text-lg" style="background-color: var(--color-primary-600);">
-            Nachricht senden
-          </button>
-          <p class="text-xs text-center" style="color: var(--color-text-muted);">
-            Mit dem Absenden stimmen Sie unserer <a href="datenschutz_1.html" class="underline">Datenschutzerklärung</a> zu.
-          </p>
-        </form>
-      </div>
-
-      <!-- CONTACT INFO -->
+    <div class="max-w-4xl mx-auto">
       <div class="space-y-8">
         <div class="bg-white rounded-xl p-8 shadow-md">
           <h3 class="text-xl font-bold mb-6" style="color: var(--color-text-primary);">Kontaktdaten</h3>
@@ -214,17 +132,9 @@
               <i class="fas fa-phone text-2xl mr-4" style="color: var(--color-primary-600);"></i>
               <div>
                 <p class="font-semibold" style="color: var(--color-text-primary);">Telefon</p>
-                <a href="tel:+49254193270" style="color: var(--color-text-secondary);" class="hover:underline">
-                  +49 2541 9327-0
+                <a href="tel:+4925022272976" style="color: var(--color-text-secondary);" class="hover:underline">
+                  +49 2502 / 22 72 976
                 </a>
-              </div>
-            </div>
-
-            <div class="flex items-start">
-              <i class="fas fa-fax text-2xl mr-4" style="color: var(--color-primary-600);"></i>
-              <div>
-                <p class="font-semibold" style="color: var(--color-text-primary);">Fax</p>
-                <p style="color: var(--color-text-secondary);">+49 2541 9327-19</p>
               </div>
             </div>
 
@@ -254,7 +164,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -296,26 +205,8 @@
   </footer>
 
   <script>
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
-    mobileDropdownToggles.forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const dropdownId = toggle.getAttribute('data-dropdown');
-        const dropdownMenu = document.querySelector(`[data-dropdown-menu="${dropdownId}"]`);
-        const dropdownIcon = toggle.querySelector('.mobile-dropdown-icon');
-        dropdownMenu.classList.toggle('open');
-        dropdownIcon.classList.toggle('open');
-      });
-    });
-
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Vielen Dank für Ihre Nachricht! Wir melden uns schnellstmöglich bei Ihnen.');
-      this.reset();
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      alert('Mobile menu - implement dropdown');
     });
   </script>
 </body>
