@@ -15,7 +15,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     /* ═══════════════════════════════════════════════════════
@@ -141,134 +143,6 @@
       width: 100%;
     }
 
-    /* Dropdown Navigation */
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-toggle {
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0;
-      font: inherit;
-    }
-
-    .dropdown-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 220px;
-      background: white;
-      border: 1px solid var(--color-gray-200);
-      border-radius: 0.5rem;
-      box-shadow: var(--shadow-lg);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px);
-      transition: all var(--duration-base) var(--ease-out);
-      z-index: 50;
-      margin-top: 0.5rem;
-    }
-
-    .dropdown:hover .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .dropdown-menu a {
-      display: block;
-      padding: 0.75rem 1rem;
-      color: var(--color-text-secondary);
-      text-decoration: none;
-      transition: all var(--duration-fast) var(--ease-out);
-      font-weight: 500;
-    }
-
-    .dropdown-menu a:hover {
-      background-color: var(--color-gray-50);
-      color: var(--color-primary-600);
-      padding-left: 1.25rem;
-    }
-
-    .dropdown-menu a:first-child {
-      border-radius: 0.5rem 0.5rem 0 0;
-    }
-
-    .dropdown-menu a:last-child {
-      border-radius: 0 0 0.5rem 0.5rem;
-    }
-
-    .dropdown-icon {
-      transition: transform var(--duration-fast) var(--ease-out);
-      display: inline-block;
-      margin-left: 0.25rem;
-      font-size: 0.75rem;
-    }
-
-    .dropdown:hover .dropdown-icon {
-      transform: rotate(180deg);
-    }
-
-    /* Mobile Dropdown */
-    .mobile-dropdown {
-      overflow: hidden;
-    }
-
-    .mobile-dropdown-toggle {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: none;
-      border: none;
-      padding: 0.5rem 0;
-      font: inherit;
-      color: var(--color-text-secondary);
-      font-weight: 500;
-      cursor: pointer;
-      text-align: left;
-    }
-
-    .mobile-dropdown-toggle:hover {
-      color: var(--color-text-primary);
-    }
-
-    .mobile-dropdown-menu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height var(--duration-base) var(--ease-out);
-      padding-left: 1rem;
-      border-left: 2px solid var(--color-gray-200);
-      margin-left: 0.5rem;
-    }
-
-    .mobile-dropdown-menu.open {
-      max-height: 500px;
-    }
-
-    .mobile-dropdown-menu a {
-      display: block;
-      padding: 0.5rem 0;
-      color: var(--color-text-secondary);
-      text-decoration: none;
-      font-size: 0.9375rem;
-    }
-
-    .mobile-dropdown-menu a:hover {
-      color: var(--color-primary-600);
-    }
-
-    .mobile-dropdown-icon {
-      transition: transform var(--duration-fast) var(--ease-out);
-      font-size: 0.75rem;
-    }
-
-    .mobile-dropdown-icon.open {
-      transform: rotate(180deg);
-    }
-
     /* Buttons */
     .btn {
       transition: all var(--duration-fast) var(--ease-out) !important;
@@ -362,7 +236,8 @@
       background: url('images/Bild-2-scaled-e1660897177127.jpg');
       background-size: cover;
       background-position: center;
-      opacity: 0.05;
+      background-repeat: no-repeat;
+      opacity: 0.1;
       z-index: 0;
     }
 
@@ -387,110 +262,42 @@
   <!-- NAVIGATION -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <!-- Logo -->
-        <div class="flex-shrink-0">
-          <a href="index_1.html" class="text-2xl font-bold" style="color: var(--color-primary-600);">
-            ZBN
-          </a>
+      <div class="flex justify-between items-center h-24">
+        <a href="index_1.html" class="flex items-center">
+          <img src="Logo-ZBN-1.png" alt="ZBN Civil Engineers" class="h-20 w-auto object-contain">
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <a href="index_1.html" class="text-gray-900 font-semibold">Home</a>
+          <a href="gutachten_1.html" class="text-gray-700 hover:text-gray-900">Planung</a>
+          <a href="schaeden_1.html" class="text-gray-700 hover:text-gray-900">Begutachtung</a>
+          <a href="beispielgutachten_1.html" class="text-gray-700 hover:text-gray-900">Beispielgutachten</a>
+          <a href="problemloesung_1.html" class="text-gray-700 hover:text-gray-900">Beratung</a>
+          <a href="leichtbau_1.html" class="text-gray-700 hover:text-gray-900">Fachgebiet</a>
+          <a href="fachbeitrage_1.html" class="text-gray-700 hover:text-gray-900">Fachbeiträge</a>
+          <a href="seminare_1.html" class="text-gray-700 hover:text-gray-900">Seminare</a>
+          <a href="wir_1.html" class="text-gray-700 hover:text-gray-900">Wir</a>
+          <a href="karriere_1.html" class="text-gray-700 hover:text-gray-900">Karriere</a>
+          <a href="kontakt_1.html" class="text-gray-700 hover:text-gray-900">Kontakt</a>
         </div>
-
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-8">
-          <a href="index_1.html" class="nav-link text-gray-900 font-medium">Home</a>
-
-          <!-- Leistungen Dropdown -->
-          <div class="dropdown">
-            <button class="dropdown-toggle nav-link text-gray-700 hover:text-gray-900 font-medium flex items-center">
-              Leistungen
-              <i class="dropdown-icon fas fa-chevron-down"></i>
-            </button>
-            <div class="dropdown-menu">
-              <a href="gutachten_1.html">Planung</a>
-              <a href="schaeden_1.html">Begutachtung</a>
-              <a href="problemloesung_1.html">Beratung</a>
-              <a href="leichtbau_1.html">Leichtbau</a>
-            </div>
-          </div>
-
-          <!-- Wissen Dropdown -->
-          <div class="dropdown">
-            <button class="dropdown-toggle nav-link text-gray-700 hover:text-gray-900 font-medium flex items-center">
-              Wissen
-              <i class="dropdown-icon fas fa-chevron-down"></i>
-            </button>
-            <div class="dropdown-menu">
-              <a href="fachbeitrage_1.html">Fachbeiträge</a>
-              <a href="seminare_1.html">Seminare</a>
-            </div>
-          </div>
-
-          <!-- Unternehmen Dropdown -->
-          <div class="dropdown">
-            <button class="dropdown-toggle nav-link text-gray-700 hover:text-gray-900 font-medium flex items-center">
-              Unternehmen
-              <i class="dropdown-icon fas fa-chevron-down"></i>
-            </button>
-            <div class="dropdown-menu">
-              <a href="wir_1.html">Über uns</a>
-              <a href="karriere_1.html">Karriere</a>
-            </div>
-          </div>
-
-          <a href="kontakt_1.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Kontakt</a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
-          <i class="fas fa-bars text-xl"></i>
+        <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+          <span class="sr-only">Menü öffnen</span>
+          <i class="fas fa-bars text-2xl"></i>
         </button>
       </div>
     </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-white border-t border-gray-200 shadow-lg max-h-[calc(100vh-4rem)] overflow-y-auto">
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white shadow-lg">
       <div class="px-4 py-4 space-y-3">
-        <a href="index_1.html" class="block py-2 text-gray-900 font-medium">Home</a>
-
-        <!-- Leistungen Mobile Dropdown -->
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-toggle" data-dropdown="leistungen">
-            <span>Leistungen</span>
-            <i class="mobile-dropdown-icon fas fa-chevron-down"></i>
-          </button>
-          <div class="mobile-dropdown-menu" data-dropdown-menu="leistungen">
-            <a href="gutachten_1.html">Planung</a>
-            <a href="schaeden_1.html">Begutachtung</a>
-            <a href="problemloesung_1.html">Beratung</a>
-            <a href="leichtbau_1.html">Leichtbau</a>
-          </div>
-        </div>
-
-        <!-- Wissen Mobile Dropdown -->
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-toggle" data-dropdown="wissen">
-            <span>Wissen</span>
-            <i class="mobile-dropdown-icon fas fa-chevron-down"></i>
-          </button>
-          <div class="mobile-dropdown-menu" data-dropdown-menu="wissen">
-            <a href="fachbeitrage_1.html">Fachbeiträge</a>
-            <a href="seminare_1.html">Seminare</a>
-          </div>
-        </div>
-
-        <!-- Unternehmen Mobile Dropdown -->
-        <div class="mobile-dropdown">
-          <button class="mobile-dropdown-toggle" data-dropdown="unternehmen">
-            <span>Unternehmen</span>
-            <i class="mobile-dropdown-icon fas fa-chevron-down"></i>
-          </button>
-          <div class="mobile-dropdown-menu" data-dropdown-menu="unternehmen">
-            <a href="wir_1.html">Über uns</a>
-            <a href="karriere_1.html">Karriere</a>
-          </div>
-        </div>
-
-        <a href="kontakt_1.html" class="block py-2 text-gray-700 hover:text-gray-900 font-medium">Kontakt</a>
+        <a href="index_1.html" class="block py-2 text-gray-900 font-semibold">Home</a>
+        <a href="gutachten_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Planung</a>
+        <a href="schaeden_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Begutachtung</a>
+        <a href="beispielgutachten_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Beispielgutachten</a>
+        <a href="problemloesung_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Beratung</a>
+        <a href="leichtbau_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Fachgebiet</a>
+        <a href="fachbeitrage_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Fachbeiträge</a>
+        <a href="seminare_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Seminare</a>
+        <a href="wir_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Wir</a>
+        <a href="karriere_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Karriere</a>
+        <a href="kontakt_1.html" class="block py-2 text-gray-700 hover:text-gray-900">Kontakt</a>
       </div>
     </div>
   </nav>
@@ -545,7 +352,7 @@
           <div class="p-8">
             <h3 class="text-2xl font-bold mb-4" style="color: var(--color-text-primary);">Planung</h3>
             <p class="text-base mb-6" style="color: var(--color-text-secondary);">
-              Verlegeplanung für Dächer, Wandplanung für Hallen, statische Berechnungen und mehr
+              Verlegeplanung für Dächer, Fassadenplanung (vorgehängte hinterlüftete Fassaden), Wandplanung für Hallen, statische Berechnungen und mehr
             </p>
             <span class="inline-flex items-center text-base font-semibold" style="color: var(--color-primary-600);">
               Mehr erfahren <i class="fas fa-arrow-right ml-2"></i>
@@ -596,13 +403,13 @@
         Haben Sie Fragen?
       </h2>
       <p class="text-xl mb-8" style="color: var(--color-text-secondary);">
-        Sollten Sie unsicher sein, ob wir Ihnen bei Ihrem Anliegen weiterhelfen können – zögern Sie nicht und rufen Sie uns an!
+        Sollten Sie unsicher sein, ob wir Ihnen bei Ihrem Anliegen weiterhelfen können, sprechen Sie uns einfach an! Wir finden es heraus!
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="kontakt_1.html" class="btn inline-block px-8 py-4 text-lg font-semibold rounded-lg text-white" style="background-color: var(--color-primary-600);">
           <i class="fas fa-envelope mr-2"></i> Kontaktformular
         </a>
-        <a href="tel:+49254193270" class="btn inline-block px-8 py-4 text-lg font-semibold rounded-lg border-2" style="color: var(--color-primary-600); border-color: var(--color-primary-600);">
+        <a href="tel:+4925022272976" class="btn inline-block px-8 py-4 text-lg font-semibold rounded-lg border-2" style="color: var(--color-primary-600); border-color: var(--color-primary-600);">
           <i class="fas fa-phone mr-2"></i> Anrufen
         </a>
       </div>
@@ -616,11 +423,11 @@
         Mitglied bei
       </h3>
       <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center opacity-60">
-        <img src="images/Bild-48.png" alt="FLIB" class="max-h-16 w-auto grayscale hover:grayscale-0 transition-all">
-        <img src="images/Bild-47.png" alt="PPA Europe" class="max-h-16 w-auto grayscale hover:grayscale-0 transition-all">
-        <img src="images/Bild-49.png" alt="IFBS" class="max-h-16 w-auto grayscale hover:grayscale-0 transition-all">
-        <img src="images/Bild-50.png" alt="IHK" class="max-h-16 w-auto grayscale hover:grayscale-0 transition-all">
-        <img src="images/Screenshot-2022-06-09-104046.png" alt="TU Dortmund" class="max-h-16 w-auto grayscale hover:grayscale-0 transition-all">
+        <img src="images/Bild-48.png" alt="FLIB" class="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+        <img src="images/Bild-47.png" alt="PPA Europe" class="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+        <img src="images/Bild-49.png" alt="IFBS" class="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+        <img src="images/Bild-50.png" alt="IHK" class="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+        <img src="images/Screenshot-2022-06-09-104046.png" alt="TU Dortmund" class="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all">
       </div>
     </div>
   </section>
@@ -679,30 +486,28 @@
     </div>
   </footer>
 
+  <!-- COOKIE CONSENT -->
+  <div id="cookie-banner" class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] max-w-3xl rounded-xl border border-gray-200 bg-white shadow-xl px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4 z-[100]">
+    <p class="text-sm text-gray-700 leading-relaxed">
+      Wir verwenden ausschließlich technisch notwendige Cookies. Die Auslieferung erfolgt über Cloudflare Pages (DSGVO-konformer Auftragsverarbeiter).
+      Weitere Informationen findest du in unserer <a href="datenschutz_1.html" class="underline text-indigo-600 hover:text-indigo-800">Datenschutzerklärung</a>.
+    </p>
+    <button id="cookie-accept" class="inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+      Verstanden
+    </button>
+  </div>
+
   <!-- JAVASCRIPT -->
   <script>
     // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Mobile Dropdown Toggle
-    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
-
-    mobileDropdownToggles.forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const dropdownId = toggle.getAttribute('data-dropdown');
-        const dropdownMenu = document.querySelector(`[data-dropdown-menu="${dropdownId}"]`);
-        const dropdownIcon = toggle.querySelector('.mobile-dropdown-icon');
-
-        // Toggle the dropdown
-        dropdownMenu.classList.toggle('open');
-        dropdownIcon.classList.toggle('open');
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
       });
-    });
+    }
 
     // Scroll Animation Observer
     const observerOptions = {
@@ -739,6 +544,26 @@
         }
       });
     });
+
+    // Cookie Banner
+    (function() {
+      const banner = document.getElementById('cookie-banner');
+      const acceptBtn = document.getElementById('cookie-accept');
+
+      if (!banner || !acceptBtn) {
+        return;
+      }
+
+      if (localStorage.getItem('zbnCookieConsent') === 'accepted') {
+        banner.remove();
+        return;
+      }
+
+      acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('zbnCookieConsent', 'accepted');
+        banner.remove();
+      });
+    })();
   </script>
 </body>
 </html>
